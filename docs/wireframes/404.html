@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Movie Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Minimal Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="index.html" class="logo">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="6" fill="#E50914"/>
+                        <path d="M10 10L20 20L10 30V10Z" fill="white"/>
+                        <path d="M20 10L30 20L20 30V10Z" fill="white" opacity="0.7"/>
+                    </svg>
+                    <span class="logo-text">Movie Hub</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Error Content -->
+    <main class="error-content">
+        <div class="error-container">
+            <div class="error-illustration">🎬</div>
+            <h1 class="error-code">404</h1>
+            <h2 class="error-title">Oops! This page doesn't exist</h2>
+            <p class="error-description">
+                The page you're looking for might have been moved or deleted.<br>
+                Let's get you back on track.
+            </p>
+
+            <div class="error-search">
+                <div class="search-bar-wrapper">
+                    <svg class="search-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" class="search-input" placeholder="Search for movies or TV shows..." aria-label="Search">
+                </div>
+            </div>
+
+            <div class="error-actions">
+                <a href="index.html" class="btn btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    Back to Home
+                </a>
+                <a href="browse-genre.html" class="btn btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect>
+                        <polyline points="17 2 12 7 7 2"></polyline>
+                    </svg>
+                    Browse Movies
+                </a>
+            </div>
+
+            <!-- Popular Movies -->
+            <section style="margin-top: 60px;">
+                <h3 class="section-subtitle" style="text-align: center; margin-bottom: 32px;">Popular Movies</h3>
+                <div class="results-grid" style="max-width: 1200px; margin: 0 auto;">
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://placehold.co/280x420/1a1a1a/666666?text=The+Dark+Knight" alt="The Dark Knight">
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://placehold.co/280x420/1a1a1a/666666?text=Inception" alt="Inception">
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://placehold.co/280x420/1a1a1a/666666?text=Interstellar" alt="Interstellar">
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://placehold.co/280x420/1a1a1a/666666?text=Pulp+Fiction" alt="Pulp Fiction">
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://placehold.co/280x420/1a1a1a/666666?text=The+Matrix" alt="The Matrix">
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://placehold.co/280x420/1a1a1a/666666?text=Fight+Club" alt="Fight Club">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Simple Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Movie Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

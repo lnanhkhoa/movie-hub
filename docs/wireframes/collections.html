@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christopher Nolan Films - Movie Hub</title>
+    <meta name="description" content="Explore curated collection of Christopher Nolan films on Movie Hub.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="logo">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="6" fill="#E50914"/>
+                        <path d="M10 10L20 20L10 30V10Z" fill="white"/>
+                        <path d="M20 10L30 20L20 30V10Z" fill="white" opacity="0.7"/>
+                    </svg>
+                    <span class="logo-text">Movie Hub</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="search-results.html?type=movies" class="active">Movies</a></li>
+                    <li><a href="search-results.html?type=tv">TV Shows</a></li>
+                    <li><a href="index.html#new">New & Popular</a></li>
+                    <li><a href="my-list.html">My List</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <a href="search-results.html" class="icon-btn search-btn" aria-label="Search">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </a>
+                <button class="icon-btn notification-btn" aria-label="Notifications">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                </button>
+                <a href="profile.html" class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=User&background=E50914&color=fff&size=36" alt="User Profile" class="profile-img">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="dropdown-icon">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Collection Hero -->
+    <section class="collection-hero">
+        <div class="collection-hero-background">
+            <img src="https://placehold.co/1920x600/2a2a2a/666666?text=Christopher+Nolan+Collection" alt="Collection Banner" class="collection-bg-image">
+            <div class="collection-hero-gradient"></div>
+        </div>
+        <div class="collection-hero-content">
+            <a href="index.html" class="back-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                Back to Home
+            </a>
+        </div>
+    </section>
+
+    <!-- Collection Content -->
+    <main class="collection-content">
+        <div class="collection-container">
+            <!-- Collection Header -->
+            <div class="collection-header">
+                <div class="collection-title-section">
+                    <h1 class="collection-title">Christopher Nolan Films</h1>
+                    <div class="curator-badge">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        Curated by Movie Hub
+                    </div>
+                </div>
+                <button class="btn btn-secondary share-collection-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="18" cy="5" r="3"></circle>
+                        <circle cx="6" cy="12" r="3"></circle>
+                        <circle cx="18" cy="19" r="3"></circle>
+                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                    </svg>
+                    Share Collection
+                </button>
+            </div>
+
+            <!-- Collection Description -->
+            <div class="collection-description">
+                <p>
+                    Explore the complete filmography of Christopher Nolan, one of cinema's most visionary directors. Known for his mind-bending narratives, stunning visuals, and exploration of time and memory, Nolan has created some of the most acclaimed films of the 21st century. From the gritty realism of The Dark Knight trilogy to the dreamscapes of Inception and the cosmic mysteries of Interstellar, this collection showcases the work of a true master filmmaker.
+                </p>
+            </div>
+
+            <!-- Collection Stats -->
+            <div class="collection-stats">
+                <div class="stat-item">
+                    <span class="stat-number">10</span>
+                    <span class="stat-label">Movies</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">8.6</span>
+                    <span class="stat-label">Avg Rating</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">1,542</span>
+                    <span class="stat-label">Followers</span>
+                </div>
+            </div>
+
+            <!-- Collection Grid -->
+            <div class="collection-grid">
+                <div class="movie-card">
+                    <div class="movie-poster">
+                        <img src="https://placehold.co/280x420/1a1a1a/666666?text=Inception" alt="Inception">
+                    </div>
+                    <div class="movie-overlay">
+                        <h3 class="movie-title">Inception</h3>
+                        <div class="movie-info">
+                            <span class="movie-year">2010</span>
+                            <div class="movie-rating">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB800">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <span>8.8</span>
+                            </div>
+                        </div>
+                        <div class="movie-actions">
+                            <button class="action-btn" aria-label="Play">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </button>
+                            <button class="action-btn" aria-label="Add to list">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </button>
+                            <button class="action-btn" aria-label="More info">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="movie-poster">
+                        <img src="https://placehold.co/280x420/1a1a1a/666666?text=The+Dark+Knight" alt="The Dark Knight">
+                    </div>
+                    <div class="movie-overlay">
+                        <h3 class="movie-title">The Dark Knight</h3>
+                        <div class="movie-info">
+                            <span class="movie-year">2008</span>
+                            <div class="movie-rating">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB800">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <span>9.0</span>
+                            </div>
+                        </div>
+                        <div class="movie-actions">
+                            <button class="action-btn" aria-label="Play">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </button>
+                            <button class="action-btn" aria-label="Add to list">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </button>
+                            <button class="action-btn" aria-label="More info">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="movie-poster">
+                        <img src="https://placehold.co/280x420/1a1a1a/666666?text=Interstellar" alt="Interstellar">
+                    </div>
+                    <div class="movie-overlay">
+                        <h3 class="movie-title">Interstellar</h3>
+                        <div class="movie-info">
+                            <span class="movie-year">2014</span>
+                            <div class="movie-rating">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB800">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <span>8.7</span>
+                            </div>
+                        </div>
+                        <div class="movie-actions">
+                            <button class="action-btn" aria-label="Play">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </button>
+                            <button class="action-btn" aria-label="Add to list">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </button>
+                            <button class="action-btn" aria-label="More info">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="movie-poster">
+                        <img src="https://placehold.co/280x420/1a1a1a/666666?text=The+Prestige" alt="The Prestige">
+                    </div>
+                    <div class="movie-overlay">
+                        <h3 class="movie-title">The Prestige</h3>
+                        <div class="movie-info">
+                            <span class="movie-year">2006</span>
+                            <div class="movie-rating">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB800">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <span>8.5</span>
+                            </div>
+                        </div>
+                        <div class="movie-actions">
+                            <button class="action-btn" aria-label="Play">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </button>
+                            <button class="action-btn" aria-label="Add to list">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </button>
+                            <button class="action-btn" aria-label="More info">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="movie-poster">
+                        <img src="https://placehold.co/280x420/1a1a1a/666666?text=Memento" alt="Memento">
+                    </div>
+                    <div class="movie-overlay">
+                        <h3 class="movie-title">Memento</h3>
+                        <div class="movie-info">
+                            <span class="movie-year">2000</span>
+                            <div class="movie-rating">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB800">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <span>8.4</span>
+                            </div>
+                        </div>
+                        <div class="movie-actions">
+                            <button class="action-btn" aria-label="Play">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </button>
+                            <button class="action-btn" aria-label="Add to list">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </button>
+                            <button class="action-btn" aria-label="More info">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="movie-poster">
+                        <img src="https://placehold.co/280x420/1a1a1a/666666?text=Dunkirk" alt="Dunkirk">
+                    </div>
+                    <div class="movie-overlay">
+                        <h3 class="movie-title">Dunkirk</h3>
+                        <div class="movie-info">
+                            <span class="movie-year">2017</span>
+                            <div class="movie-rating">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB800">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <span>7.8</span>
+                            </div>
+                        </div>
+                        <div class="movie-actions">
+                            <button class="action-btn" aria-label="Play">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </button>
+                            <button class="action-btn" aria-label="Add to list">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </button>
+                            <button class="action-btn" aria-label="More info">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more movie cards similarly... (continuing for 10 total) -->
+                <div class="movie-card">
+                    <div class="movie-poster">
+                        <img src="https://placehold.co/280x420/1a1a1a/666666?text=Batman+Begins" alt="Batman Begins">
+                    </div>
+                    <div class="movie-overlay">
+                        <h3 class="movie-title">Batman Begins</h3>
+                        <div class="movie-info">
+                            <span class="movie-year">2005</span>
+                            <div class="movie-rating">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB800">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <span>8.2</span>
+                            </div>
+                        </div>
+                        <div class="movie-actions">
+                            <button class="action-btn" aria-label="Play">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </button>
+                            <button class="action-btn" aria-label="Add to list">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </button>
+                            <button class="action-btn" aria-label="More info">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="movie-poster">
+                        <img src="https://placehold.co/280x420/1a1a1a/666666?text=Dark+Knight+Rises" alt="The Dark Knight Rises">
+                    </div>
+                    <div class="movie-overlay">
+                        <h3 class="movie-title">The Dark Knight Rises</h3>
+                        <div class="movie-info">
+                            <span class="movie-year">2012</span>
+                            <div class="movie-rating">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB800">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <span>8.4</span>
+                            </div>
+                        </div>
+                        <div class="movie-actions">
+                            <button class="action-btn" aria-label="Play">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </button>
+                            <button class="action-btn" aria-label="Add to list">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </button>
+                            <button class="action-btn" aria-label="More info">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="movie-poster">
+                        <img src="https://placehold.co/280x420/1a1a1a/666666?text=Tenet" alt="Tenet">
+                    </div>
+                    <div class="movie-overlay">
+                        <h3 class="movie-title">Tenet</h3>
+                        <div class="movie-info">
+                            <span class="movie-year">2020</span>
+                            <div class="movie-rating">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB800">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <span>7.3</span>
+                            </div>
+                        </div>
+                        <div class="movie-actions">
+                            <button class="action-btn" aria-label="Play">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </button>
+                            <button class="action-btn" aria-label="Add to list">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </button>
+                            <button class="action-btn" aria-label="More info">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="movie-poster">
+                        <img src="https://placehold.co/280x420/1a1a1a/666666?text=Oppenheimer" alt="Oppenheimer">
+                    </div>
+                    <div class="movie-overlay">
+                        <h3 class="movie-title">Oppenheimer</h3>
+                        <div class="movie-info">
+                            <span class="movie-year">2023</span>
+                            <div class="movie-rating">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB800">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <span>8.5</span>
+                            </div>
+                        </div>
+                        <div class="movie-actions">
+                            <button class="action-btn" aria-label="Play">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </button>
+                            <button class="action-btn" aria-label="Add to list">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </button>
+                            <button class="action-btn" aria-label="More info">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Collections -->
+            <section class="related-collections">
+                <h2 class="section-subtitle">Related Collections</h2>
+                <div class="related-collections-grid">
+                    <div class="related-collection-card">
+                        <img src="https://placehold.co/400x225/1a1a1a/666666?text=Quentin+Tarantino" alt="Quentin Tarantino Collection" class="related-collection-image">
+                        <div class="related-collection-info">
+                            <h3 class="related-collection-title">Quentin Tarantino Films</h3>
+                            <span class="related-collection-count">9 Movies</span>
+                        </div>
+                    </div>
+
+                    <div class="related-collection-card">
+                        <img src="https://placehold.co/400x225/1a1a1a/666666?text=Martin+Scorsese" alt="Martin Scorsese Collection" class="related-collection-image">
+                        <div class="related-collection-info">
+                            <h3 class="related-collection-title">Martin Scorsese Classics</h3>
+                            <span class="related-collection-count">15 Movies</span>
+                        </div>
+                    </div>
+
+                    <div class="related-collection-card">
+                        <img src="https://placehold.co/400x225/1a1a1a/666666?text=Mind+Bending" alt="Mind Bending Movies" class="related-collection-image">
+                        <div class="related-collection-info">
+                            <h3 class="related-collection-title">Mind-Bending Thrillers</h3>
+                            <span class="related-collection-count">24 Movies</span>
+                        </div>
+                    </div>
+
+                    <div class="related-collection-card">
+                        <img src="https://placehold.co/400x225/1a1a1a/666666?text=Sci+Fi" alt="Sci-Fi Epics" class="related-collection-image">
+                        <div class="related-collection-info">
+                            <h3 class="related-collection-title">Sci-Fi Epics</h3>
+                            <span class="related-collection-count">18 Movies</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#press">Press</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="help-center.html">Help Center</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="help-center.html">FAQ</a></li>
+                        <li><a href="#feedback">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="#cookie">Cookie Policy</a></li>
+                        <li><a href="#disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#facebook" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#twitter" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#instagram" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="#141414"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#141414" stroke-width="2"></line>
+                            </svg>
+                        </a>
+                        <a href="#youtube" aria-label="YouTube">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#141414"></polygon>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Movie Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sign-In Modal -->
+    <div id="signin-modal" class="signin-modal" role="dialog" aria-labelledby="signin-modal-title" aria-modal="true">
+        <div class="signin-modal-overlay" aria-hidden="true"></div>
+        <div class="signin-modal-content">
+            <button class="signin-modal-close" aria-label="Close sign-in modal">&times;</button>
+
+            <div class="signin-modal-logo">
+                <svg width="60" height="60" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="6" fill="#E50914"/>
+                    <path d="M10 10L20 20L10 30V10Z" fill="white"/>
+                    <path d="M20 10L30 20L20 30V10Z" fill="white" opacity="0.7"/>
+                </svg>
+            </div>
+
+            <h2 id="signin-modal-title">Sign in to continue</h2>
+            <p class="signin-modal-subtitle">Sign in to save movies to your list and write reviews</p>
+
+            <button class="google-signin-btn">
+                <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                </svg>
+                Sign in with Google
+            </button>
+
+            <p class="signin-modal-privacy">
+                By signing in, you agree to our <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

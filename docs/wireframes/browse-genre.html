@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Action Movies - Movie Hub</title>
+    <meta name="description" content="Browse action movies on Movie Hub. Filter by year, rating, and subgenre.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="logo">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="6" fill="#E50914"/>
+                        <path d="M10 10L20 20L10 30V10Z" fill="white"/>
+                        <path d="M20 10L30 20L20 30V10Z" fill="white" opacity="0.7"/>
+                    </svg>
+                    <span class="logo-text">Movie Hub</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="search-results.html?type=movies" class="active">Movies</a></li>
+                    <li><a href="search-results.html?type=tv">TV Shows</a></li>
+                    <li><a href="index.html#new">New & Popular</a></li>
+                    <li><a href="my-list.html">My List</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <a href="search-results.html" class="icon-btn search-btn" aria-label="Search">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </a>
+                <button class="icon-btn notification-btn" aria-label="Notifications">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                </button>
+                <a href="profile.html" class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=User&background=E50914&color=fff&size=36" alt="User Profile" class="profile-img">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="dropdown-icon">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Genre Hero Section -->
+    <section class="detail-hero">
+        <div class="detail-hero-background">
+            <img src="https://placehold.co/1920x600/1a1a1a/666666?text=Action+Genre" alt="Action Movies" class="detail-bg-image">
+            <div class="detail-hero-gradient"></div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="search-content">
+        <div class="search-container">
+            <nav aria-label="Breadcrumb" style="padding: var(--spacing-md) 0; color: var(--text-secondary); font-size: 14px;">
+                <a href="index.html" style="color: var(--text-secondary);">Home</a>
+                <span style="margin: 0 8px;">/</span>
+                <a href="search-results.html?type=movies" style="color: var(--text-secondary);">Movies</a>
+                <span style="margin: 0 8px;">/</span>
+                <span style="color: var(--text-primary);">Action</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="search-content">
+        <div class="search-layout">
+            <!-- Filter Sidebar -->
+            <aside class="filter-sidebar">
+                <div class="filter-header">
+                    <h2 class="filter-title">Filters</h2>
+                    <button class="clear-filters-btn">Clear All</button>
+                </div>
+
+                <!-- Subgenre Filter -->
+                <div class="filter-section">
+                    <h3 class="filter-section-title">Subgenre</h3>
+                    <div class="filter-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" value="superhero">
+                            <span>Superhero</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" value="martial-arts">
+                            <span>Martial Arts</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" value="adventure">
+                            <span>Adventure</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" value="thriller">
+                            <span>Thriller</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" value="sci-fi">
+                            <span>Sci-Fi Action</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Year Range Filter -->
+                <div class="filter-section">
+                    <h3 class="filter-section-title">Release Year</h3>
+                    <div class="range-inputs">
+                        <input type="number" class="range-input" placeholder="From" min="1900" max="2025" value="2000">
+                        <span class="range-separator">-</span>
+                        <input type="number" class="range-input" placeholder="To" min="1900" max="2025" value="2025">
+                    </div>
+                </div>
+
+                <!-- Rating Filter -->
+                <div class="filter-section">
+                    <h3 class="filter-section-title">Minimum Rating</h3>
+                    <div class="rating-slider-wrapper">
+                        <input type="range" class="rating-slider" min="0" max="10" step="0.5" value="7.0" id="rating-slider">
+                        <div class="rating-value">
+                            <span id="rating-value-display">7.0</span> / 10
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sort Filter -->
+                <div class="filter-section">
+                    <h3 class="filter-section-title">Sort By</h3>
+                    <select class="filter-select" id="sort-select">
+                        <option value="popularity">Most Popular</option>
+                        <option value="rating">Highest Rated</option>
+                        <option value="year">Newest First</option>
+                        <option value="year-old">Oldest First</option>
+                        <option value="title">Title (A-Z)</option>
+                    </select>
+                </div>
+            </aside>
+
+            <!-- Results Area -->
+            <main class="results-area">
+                <div class="results-header">
+                    <h1 class="results-title">
+                        Action Movies
+                        <span class="results-count">(236 movies)</span>
+                    </h1>
+                    <div class="view-toggle">
+                        <button class="view-btn active" aria-label="Grid view">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <rect x="3" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="3" width="7" height="7"></rect>
+                                <rect x="3" y="14" width="7" height="7"></rect>
+                                <rect x="14" y="14" width="7" height="7"></rect>
+                            </svg>
+                        </button>
+                        <button class="view-btn" aria-label="List view">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="8" y1="6" x2="21" y2="6"></line>
+                                <line x1="8" y1="12" x2="21" y2="12"></line>
+                                <line x1="8" y1="18" x2="21" y2="18"></line>
+                                <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                                <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                                <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Movie Grid -->
+                <div class="results-grid">
+                    <!-- Movie Card 1 -->
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://placehold.co/280x420/1a1a1a/666666?text=The+Dark+Knight" alt="The Dark Knight">
+                        </div>
+                        <div class="movie-overlay">
+                            <h3 class="movie-title">The Dark Knight</h3>
+                            <div class="movie-info">
+                                <span class="movie-year">2008</span>
+                                <div class="movie-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB800">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <span>9.0</span>
+                                </div>
+                            </div>
+                            <div class="movie-actions">
+                                <button class="action-btn" aria-label="Play">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </button>
+                                <button class="action-btn" aria-label="Add to list">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </button>
+                                <button class="action-btn" aria-label="More info">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Movie Card 2 -->
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://placehold.co/280x420/1a1a1a/666666?text=Mad+Max" alt="Mad Max Fury Road">
+                        </div>
+                        <div class="movie-overlay">
+                            <h3 class="movie-title">Mad Max: Fury Road</h3>
+                            <div class="movie-info">
+                                <span class="movie-year">2015</span>
+                                <div class="movie-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB800">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <span>8.1</span>
+                                </div>
+                            </div>
+                            <div class="movie-actions">
+                                <button class="action-btn" aria-label="Play">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </button>
+                                <button class="action-btn" aria-label="Add to list">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </button>
+                                <button class="action-btn" aria-label="More info">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Movie Card 3 -->
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://placehold.co/280x420/1a1a1a/666666?text=Die+Hard" alt="Die Hard">
+                        </div>
+                        <div class="movie-overlay">
+                            <h3 class="movie-title">Die Hard</h3>
+                            <div class="movie-info">
+                                <span class="movie-year">1988</span>
+                                <div class="movie-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB800">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <span>8.2</span>
+                                </div>
+                            </div>
+                            <div class="movie-actions">
+                                <button class="action-btn" aria-label="Play">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </button>
+                                <button class="action-btn" aria-label="Add to list">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </button>
+                                <button class="action-btn" aria-label="More info">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional movie cards (repeat pattern for demo) -->
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://placehold.co/280x420/1a1a1a/666666?text=John+Wick" alt="John Wick">
+                        </div>
+                        <div class="movie-overlay">
+                            <h3 class="movie-title">John Wick</h3>
+                            <div class="movie-info">
+                                <span class="movie-year">2014</span>
+                                <div class="movie-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB800">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <span>7.4</span>
+                                </div>
+                            </div>
+                            <div class="movie-actions">
+                                <button class="action-btn" aria-label="Play">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </button>
+                                <button class="action-btn" aria-label="Add to list">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </button>
+                                <button class="action-btn" aria-label="More info">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://placehold.co/280x420/1a1a1a/666666?text=The+Avengers" alt="The Avengers">
+                        </div>
+                        <div class="movie-overlay">
+                            <h3 class="movie-title">The Avengers</h3>
+                            <div class="movie-info">
+                                <span class="movie-year">2012</span>
+                                <div class="movie-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB800">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <span>8.0</span>
+                                </div>
+                            </div>
+                            <div class="movie-actions">
+                                <button class="action-btn" aria-label="Play">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </button>
+                                <button class="action-btn" aria-label="Add to list">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </button>
+                                <button class="action-btn" aria-label="More info">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://placehold.co/280x420/1a1a1a/666666?text=Gladiator" alt="Gladiator">
+                        </div>
+                        <div class="movie-overlay">
+                            <h3 class="movie-title">Gladiator</h3>
+                            <div class="movie-info">
+                                <span class="movie-year">2000</span>
+                                <div class="movie-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB800">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <span>8.5</span>
+                                </div>
+                            </div>
+                            <div class="movie-actions">
+                                <button class="action-btn" aria-label="Play">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </button>
+                                <button class="action-btn" aria-label="Add to list">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </button>
+                                <button class="action-btn" aria-label="More info">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="page-btn" disabled aria-label="Previous page">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <span class="page-dots">...</span>
+                    <button class="page-btn">20</button>
+                    <button class="page-btn" aria-label="Next page">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#press">Press</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="help-center.html">Help Center</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#feedback">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="#cookie">Cookie Policy</a></li>
+                        <li><a href="#disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#facebook" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#twitter" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#instagram" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="#141414"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#141414" stroke-width="2"></line>
+                            </svg>
+                        </a>
+                        <a href="#youtube" aria-label="YouTube">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#141414"></polygon>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Movie Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sign-In Modal -->
+    <div id="signin-modal" class="signin-modal" role="dialog" aria-labelledby="signin-modal-title" aria-modal="true">
+        <div class="signin-modal-overlay" aria-hidden="true"></div>
+        <div class="signin-modal-content">
+            <button class="signin-modal-close" aria-label="Close sign-in modal">&times;</button>
+
+            <div class="signin-modal-logo">
+                <svg width="60" height="60" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="6" fill="#E50914"/>
+                    <path d="M10 10L20 20L10 30V10Z" fill="white"/>
+                    <path d="M20 10L30 20L20 30V10Z" fill="white" opacity="0.7"/>
+                </svg>
+            </div>
+
+            <h2 id="signin-modal-title">Sign in to continue</h2>
+            <p class="signin-modal-subtitle">Sign in to save movies to your list and write reviews</p>
+
+            <button class="google-signin-btn">
+                <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                </svg>
+                Sign in with Google
+            </button>
+
+            <p class="signin-modal-privacy">
+                By signing in, you agree to our <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Rating slider interaction
+        const ratingSlider = document.getElementById('rating-slider');
+        const ratingDisplay = document.getElementById('rating-value-display');
+
+        if (ratingSlider && ratingDisplay) {
+            ratingSlider.addEventListener('input', (e) => {
+                ratingDisplay.textContent = e.target.value;
+            });
+        }
+
+        // Clear filters
+        const clearFiltersBtn = document.querySelector('.clear-filters-btn');
+        if (clearFiltersBtn) {
+            clearFiltersBtn.addEventListener('click', () => {
+                // Reset all checkboxes
+                document.querySelectorAll('.filter-sidebar input[type="checkbox"]').forEach(cb => {
+                    cb.checked = false;
+                });
+                // Reset year inputs
+                document.querySelectorAll('.range-input')[0].value = '2000';
+                document.querySelectorAll('.range-input')[1].value = '2025';
+                // Reset rating slider
+                if (ratingSlider) {
+                    ratingSlider.value = 7.0;
+                    ratingDisplay.textContent = '7.0';
+                }
+                // Reset sort
+                document.getElementById('sort-select').value = 'popularity';
+            });
+        }
+
+        // View toggle
+        const viewBtns = document.querySelectorAll('.view-btn');
+        viewBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                viewBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

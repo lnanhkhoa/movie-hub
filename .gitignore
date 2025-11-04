@@ -39,3 +39,18 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+# plans/templates/*
+
+# For claude code, ignore the following files in git
+screenshots/*
+docs/screenshots/*
+docs/journals/*
+docs/research/*
+plans/reports/*
+plans/research/*
+.claude/*
+.claude/agents/*
+.claude/commands/*
+.claude/hooks/*
+.claude/skills/*
+.claude/workflows/*

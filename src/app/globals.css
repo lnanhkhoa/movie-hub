@@ -1,0 +1,180 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* Movie Hub Color Palette */
+  --color-primary-bg: #141414;
+  --color-secondary-bg: #1F1F1F;
+  --color-accent-red: #E50914;
+  --color-accent-gold: #FFB800;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #B3B3B3;
+
+  /* Tailwind color mappings */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Border radius - Netflix-inspired rounded corners */
+  --radius-sm: 0.25rem; /* 4px */
+  --radius-md: 0.5rem;  /* 8px */
+  --radius-lg: 0.75rem; /* 12px */
+  --radius-xl: 1rem;    /* 16px */
+
+  /* Font families */
+  --font-poppins: var(--font-poppins);
+  --font-roboto: var(--font-roboto);
+  --font-sans: var(--font-poppins);
+
+  /* Spacing scale (8px base grid) */
+  --spacing-sm: 0.5rem;   /* 8px */
+  --spacing-md: 1rem;     /* 16px */
+  --spacing-lg: 1.5rem;   /* 24px */
+  --spacing-xl: 2.5rem;   /* 40px */
+  --spacing-2xl: 3.125rem; /* 50px */
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Movie Hub Dark Theme - Always dark mode */
+  --background: oklch(0.08 0 0);        /* #141414 */
+  --foreground: oklch(1 0 0);           /* #FFFFFF */
+  --card: oklch(0.12 0 0);              /* #1F1F1F */
+  --card-foreground: oklch(1 0 0);      /* #FFFFFF */
+  --popover: oklch(0.12 0 0);           /* #1F1F1F */
+  --popover-foreground: oklch(1 0 0);   /* #FFFFFF */
+  --primary: oklch(0.55 0.22 29);       /* #E50914 - Netflix Red */
+  --primary-foreground: oklch(1 0 0);   /* #FFFFFF */
+  --secondary: oklch(0.12 0 0);         /* #1F1F1F */
+  --secondary-foreground: oklch(1 0 0); /* #FFFFFF */
+  --muted: oklch(0.12 0 0);             /* #1F1F1F */
+  --muted-foreground: oklch(0.72 0 0);  /* #B3B3B3 */
+  --accent: oklch(0.55 0.22 29);        /* #E50914 */
+  --accent-foreground: oklch(1 0 0);    /* #FFFFFF */
+  --destructive: oklch(0.55 0.22 29);   /* #E50914 */
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.18 0 0);            /* Slightly lighter than card */
+  --input: oklch(0.18 0 0);
+  --ring: oklch(0.55 0.22 29);          /* #E50914 */
+
+  /* Gold accent for ratings */
+  --gold: oklch(0.78 0.18 85);          /* #FFB800 */
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-roboto), system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-poppins), system-ui, sans-serif;
+    font-weight: 600;
+  }
+
+  /* Scrollbar styling for dark theme */
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: oklch(0.08 0 0);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: oklch(0.3 0 0);
+    border-radius: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.4 0 0);
+  }
+
+  /* Selection color */
+  ::selection {
+    background: oklch(0.55 0.22 29 / 0.3);
+    color: oklch(1 0 0);
+  }
+}
+
+@layer utilities {
+  /* Movie Hub custom utilities */
+  .text-gold {
+    color: var(--gold);
+  }
+
+  .bg-primary-bg {
+    background-color: var(--color-primary-bg);
+  }
+
+  .bg-secondary-bg {
+    background-color: var(--color-secondary-bg);
+  }
+
+  .text-netflix-red {
+    color: var(--color-accent-red);
+  }
+
+  .bg-netflix-red {
+    background-color: var(--color-accent-red);
+  }
+
+  /* Glassmorphism effect */
+  .glass {
+    background: oklch(0.12 0 0 / 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* Gradient overlays */
+  .gradient-overlay-bottom {
+    background: linear-gradient(to top, oklch(0.08 0 0) 0%, transparent 100%);
+  }
+
+  .gradient-overlay-top {
+    background: linear-gradient(to bottom, oklch(0.08 0 0) 0%, transparent 100%);
+  }
+
+  /* Smooth hover scale */
+  .hover-scale {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  /* Card hover effect */
+  .movie-card-hover {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .movie-card-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px oklch(0 0 0 / 0.5);
+  }
+}

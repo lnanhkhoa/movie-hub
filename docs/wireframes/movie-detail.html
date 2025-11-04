@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inception - Movie Hub</title>
+    <meta name="description" content="Watch Inception - A mind-bending thriller about dreams within dreams.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="logo">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="6" fill="#E50914"/>
+                        <path d="M10 10L20 20L10 30V10Z" fill="white"/>
+                        <path d="M20 10L30 20L20 30V10Z" fill="white" opacity="0.7"/>
+                    </svg>
+                    <span class="logo-text">Movie Hub</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="search-results.html?type=movies">Movies</a></li>
+                    <li><a href="search-results.html?type=tv">TV Shows</a></li>
+                    <li><a href="index.html#new">New & Popular</a></li>
+                    <li><a href="my-list.html">My List</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <button class="icon-btn search-btn" aria-label="Search" onclick="window.location.href='search-results.html'">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <button class="icon-btn notification-btn" aria-label="Notifications">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                </button>
+                <div class="user-profile" onclick="window.location.href='profile.html'">
+                    <img src="https://ui-avatars.com/api/?name=User&background=E50914&color=fff&size=36" alt="User Profile" class="profile-img">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="dropdown-icon">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Movie Detail Hero -->
+    <section class="detail-hero">
+        <div class="detail-hero-background">
+            <div class="detail-hero-gradient"></div>
+            <img src="https://placehold.co/1920x800/2a2a2a/666666?text=Inception+Backdrop" alt="Inception Backdrop" class="detail-bg-image">
+        </div>
+        <div class="detail-hero-content">
+            <a href="index.html" class="back-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Back
+            </a>
+        </div>
+    </section>
+
+    <!-- Movie Details Section -->
+    <main class="detail-content">
+        <div class="detail-container">
+            <!-- Movie Info Section -->
+            <div class="detail-main">
+                <div class="detail-poster-wrapper">
+                    <img src="https://placehold.co/300x450/1a1a1a/666666?text=Inception+Poster" alt="Inception Poster" class="detail-poster">
+                </div>
+
+                <div class="detail-info">
+                    <h1 class="detail-title">Inception</h1>
+
+                    <div class="detail-meta">
+                        <div class="rating">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFB800" stroke="none">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFB800" stroke="none">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFB800" stroke="none">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFB800" stroke="none">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFB800" stroke="none">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <span class="rating-text">8.8</span>
+                        </div>
+                        <span class="year">2010</span>
+                        <span class="duration">2h 28m</span>
+                        <span class="age-rating">PG-13</span>
+                    </div>
+
+                    <div class="genres">
+                        <span class="genre-tag">Action</span>
+                        <span class="genre-tag">Sci-Fi</span>
+                        <span class="genre-tag">Thriller</span>
+                    </div>
+
+                    <div class="detail-buttons">
+                        <button class="btn btn-primary" onclick="window.location.href='video-player.html'">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                            Play Now
+                        </button>
+                        <button class="btn btn-secondary">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                            Add to List
+                        </button>
+                        <button class="btn btn-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="18" cy="5" r="3"></circle>
+                                <circle cx="6" cy="12" r="3"></circle>
+                                <circle cx="18" cy="19" r="3"></circle>
+                                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="synopsis">
+                        <h2 class="section-subtitle">Synopsis</h2>
+                        <p>A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O., but his tragic past may doom the project and his team to disaster.</p>
+                        <p>Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during the dream state. Cobb's rare ability has made him a coveted player in this treacherous new world of corporate espionage, but it has also made him an international fugitive.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cast Section -->
+            <section class="cast-section">
+                <h2 class="section-subtitle">Cast</h2>
+                <div class="cast-grid">
+                    <div class="cast-card">
+                        <img src="https://placehold.co/150x150/2a2a2a/999999?text=Actor" alt="Leonardo DiCaprio" class="cast-photo">
+                        <h3 class="cast-name">Leonardo DiCaprio</h3>
+                        <p class="cast-role">Dom Cobb</p>
+                    </div>
+                    <div class="cast-card">
+                        <img src="https://placehold.co/150x150/2a2a2a/999999?text=Actor" alt="Joseph Gordon-Levitt" class="cast-photo">
+                        <h3 class="cast-name">Joseph Gordon-Levitt</h3>
+                        <p class="cast-role">Arthur</p>
+                    </div>
+                    <div class="cast-card">
+                        <img src="https://placehold.co/150x150/2a2a2a/999999?text=Actor" alt="Elliot Page" class="cast-photo">
+                        <h3 class="cast-name">Elliot Page</h3>
+                        <p class="cast-role">Ariadne</p>
+                    </div>
+                    <div class="cast-card">
+                        <img src="https://placehold.co/150x150/2a2a2a/999999?text=Actor" alt="Tom Hardy" class="cast-photo">
+                        <h3 class="cast-name">Tom Hardy</h3>
+                        <p class="cast-role">Eames</p>
+                    </div>
+                    <div class="cast-card">
+                        <img src="https://placehold.co/150x150/2a2a2a/999999?text=Actor" alt="Marion Cotillard" class="cast-photo">
+                        <h3 class="cast-name">Marion Cotillard</h3>
+                        <p class="cast-role">Mal Cobb</p>
+                    </div>
+                    <div class="cast-card">
+                        <img src="https://placehold.co/150x150/2a2a2a/999999?text=Actor" alt="Ken Watanabe" class="cast-photo">
+                        <h3 class="cast-name">Ken Watanabe</h3>
+                        <p class="cast-role">Saito</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Crew Section -->
+            <section class="crew-section">
+                <h2 class="section-subtitle">Crew</h2>
+                <div class="crew-list">
+                    <div class="crew-item">
+                        <span class="crew-role">Director</span>
+                        <span class="crew-name">Christopher Nolan</span>
+                    </div>
+                    <div class="crew-item">
+                        <span class="crew-role">Writer</span>
+                        <span class="crew-name">Christopher Nolan</span>
+                    </div>
+                    <div class="crew-item">
+                        <span class="crew-role">Producer</span>
+                        <span class="crew-name">Emma Thomas, Christopher Nolan</span>
+                    </div>
+                    <div class="crew-item">
+                        <span class="crew-role">Cinematography</span>
+                        <span class="crew-name">Wally Pfister</span>
+                    </div>
+                    <div class="crew-item">
+                        <span class="crew-role">Music</span>
+                        <span class="crew-name">Hans Zimmer</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Trailer Section -->
+            <section class="trailer-section">
+                <h2 class="section-subtitle">Trailer</h2>
+                <div class="video-embed">
+                    <img src="https://placehold.co/1280x720/2a2a2a/666666?text=Trailer+Video" alt="Trailer" class="video-placeholder">
+                    <button class="play-trailer-btn">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </button>
+                </div>
+            </section>
+
+            <!-- More Like This Section -->
+            <section class="similar-movies-section">
+                <h2 class="section-subtitle">More Like This</h2>
+                <div class="similar-grid">
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://placehold.co/280x420/1a1a1a/666666?text=Interstellar" alt="Interstellar">
+                        </div>
+                        <div class="movie-overlay">
+                            <h3 class="movie-title">Interstellar</h3>
+                            <div class="movie-info">
+                                <span class="movie-year">2014</span>
+                                <div class="movie-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB800">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <span>8.7</span>
+                                </div>
+                            </div>
+                            <div class="movie-actions">
+                                <button class="action-btn" aria-label="Play">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </button>
+                                <button class="action-btn" aria-label="Add to list">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </button>
+                                <button class="action-btn" aria-label="More info">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://placehold.co/280x420/1a1a1a/666666?text=The+Matrix" alt="The Matrix">
+                        </div>
+                        <div class="movie-overlay">
+                            <h3 class="movie-title">The Matrix</h3>
+                            <div class="movie-info">
+                                <span class="movie-year">1999</span>
+                                <div class="movie-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB800">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <span>8.7</span>
+                                </div>
+                            </div>
+                            <div class="movie-actions">
+                                <button class="action-btn" aria-label="Play">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </button>
+                                <button class="action-btn" aria-label="Add to list">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </button>
+                                <button class="action-btn" aria-label="More info">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://placehold.co/280x420/1a1a1a/666666?text=Shutter+Island" alt="Shutter Island">
+                        </div>
+                        <div class="movie-overlay">
+                            <h3 class="movie-title">Shutter Island</h3>
+                            <div class="movie-info">
+                                <span class="movie-year">2010</span>
+                                <div class="movie-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB800">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <span>8.2</span>
+                                </div>
+                            </div>
+                            <div class="movie-actions">
+                                <button class="action-btn" aria-label="Play">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </button>
+                                <button class="action-btn" aria-label="Add to list">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </button>
+                                <button class="action-btn" aria-label="More info">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://placehold.co/280x420/1a1a1a/666666?text=The+Prestige" alt="The Prestige">
+                        </div>
+                        <div class="movie-overlay">
+                            <h3 class="movie-title">The Prestige</h3>
+                            <div class="movie-info">
+                                <span class="movie-year">2006</span>
+                                <div class="movie-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB800">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <span>8.5</span>
+                                </div>
+                            </div>
+                            <div class="movie-actions">
+                                <button class="action-btn" aria-label="Play">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </button>
+                                <button class="action-btn" aria-label="Add to list">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </button>
+                                <button class="action-btn" aria-label="More info">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reviews Section -->
+            <section class="reviews-section">
+                <h2 class="section-subtitle">User Reviews</h2>
+
+                <div class="rating-overview">
+                    <div class="rating-score">
+                        <span class="score-number">8.8</span>
+                        <div class="score-stars">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFB800">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFB800">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFB800">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFB800">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="#666">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <span class="review-count">2,456 reviews</span>
+                    </div>
+
+                    <div class="rating-distribution">
+                        <div class="rating-bar">
+                            <span class="bar-label">5★</span>
+                            <div class="bar-container">
+                                <div class="bar-fill" style="width: 70%"></div>
+                            </div>
+                            <span class="bar-percentage">70%</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span class="bar-label">4★</span>
+                            <div class="bar-container">
+                                <div class="bar-fill" style="width: 20%"></div>
+                            </div>
+                            <span class="bar-percentage">20%</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span class="bar-label">3★</span>
+                            <div class="bar-container">
+                                <div class="bar-fill" style="width: 7%"></div>
+                            </div>
+                            <span class="bar-percentage">7%</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span class="bar-label">2★</span>
+                            <div class="bar-container">
+                                <div class="bar-fill" style="width: 2%"></div>
+                            </div>
+                            <span class="bar-percentage">2%</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span class="bar-label">1★</span>
+                            <div class="bar-container">
+                                <div class="bar-fill" style="width: 1%"></div>
+                            </div>
+                            <span class="bar-percentage">1%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reviews-list">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="https://ui-avatars.com/api/?name=John+Doe&background=E50914&color=fff&size=48" alt="User" class="review-avatar">
+                            <div class="review-user-info">
+                                <h4 class="review-author">John Doe</h4>
+                                <div class="review-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB800">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <span>9.0</span>
+                                    <span class="review-date">2 weeks ago</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="review-text">A masterpiece of modern cinema! The concept is mind-blowing, the execution is flawless, and the ending still has me thinking. Hans Zimmer's score is perfection.</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="https://ui-avatars.com/api/?name=Sarah+Smith&background=E50914&color=fff&size=48" alt="User" class="review-avatar">
+                            <div class="review-user-info">
+                                <h4 class="review-author">Sarah Smith</h4>
+                                <div class="review-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB800">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <span>8.5</span>
+                                    <span class="review-date">1 month ago</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="review-text">Nolan at his best! The visuals are stunning, the cast is incredible, and the story keeps you engaged from start to finish. Definitely worth multiple watches.</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="https://ui-avatars.com/api/?name=Mike+Chen&background=E50914&color=fff&size=48" alt="User" class="review-avatar">
+                            <div class="review-user-info">
+                                <h4 class="review-author">Mike Chen</h4>
+                                <div class="review-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB800">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <span>9.5</span>
+                                    <span class="review-date">3 months ago</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="review-text">One of the most original and thought-provoking films ever made. The dream sequences are brilliantly crafted and the practical effects are amazing!</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#press">Press</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#feedback">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#cookie">Cookie Policy</a></li>
+                        <li><a href="#disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#facebook" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#twitter" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#instagram" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="#141414"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#141414" stroke-width="2"></line>
+                            </svg>
+                        </a>
+                        <a href="#youtube" aria-label="YouTube">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#141414"></polygon>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Movie Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

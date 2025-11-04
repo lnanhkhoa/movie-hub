@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breaking Bad - Movie Hub</title>
+    <meta name="description" content="Watch Breaking Bad on Movie Hub. Stream all seasons and episodes.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="logo">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="6" fill="#E50914"/>
+                        <path d="M10 10L20 20L10 30V10Z" fill="white"/>
+                        <path d="M20 10L30 20L20 30V10Z" fill="white" opacity="0.7"/>
+                    </svg>
+                    <span class="logo-text">Movie Hub</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="search-results.html?type=movies">Movies</a></li>
+                    <li><a href="search-results.html?type=tv" class="active">TV Shows</a></li>
+                    <li><a href="index.html#new">New & Popular</a></li>
+                    <li><a href="my-list.html">My List</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <a href="search-results.html" class="icon-btn search-btn" aria-label="Search">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </a>
+                <button class="icon-btn notification-btn" aria-label="Notifications">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                </button>
+                <a href="profile.html" class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=User&background=E50914&color=fff&size=36" alt="User Profile" class="profile-img">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="dropdown-icon">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="detail-hero">
+        <div class="detail-hero-background">
+            <img src="https://placehold.co/1920x600/2a2a2a/666666?text=Breaking+Bad+Backdrop" alt="Breaking Bad Backdrop" class="detail-bg-image">
+            <div class="detail-hero-gradient"></div>
+        </div>
+        <div class="detail-hero-content">
+            <a href="search-results.html?type=tv" class="back-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                Back to Browse
+            </a>
+        </div>
+    </section>
+
+    <!-- Detail Content -->
+    <div class="detail-content">
+        <div class="detail-container">
+            <!-- Main Info Section -->
+            <div class="detail-main">
+                <div class="detail-poster-wrapper">
+                    <img src="https://placehold.co/300x450/1a1a1a/666666?text=Breaking+Bad" alt="Breaking Bad Poster" class="detail-poster">
+                </div>
+
+                <div class="detail-info">
+                    <h1 class="detail-title">Breaking Bad</h1>
+
+                    <div class="detail-meta">
+                        <div class="rating">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFB800" stroke="none">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFB800" stroke="none">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFB800" stroke="none">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFB800" stroke="none">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFB800" stroke="none">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <span class="rating-text">9.5</span>
+                        </div>
+                        <span class="year">2008-2013</span>
+                        <span class="duration">5 Seasons</span>
+                        <span class="age-rating">TV-MA</span>
+                    </div>
+
+                    <div class="genres">
+                        <span class="genre-tag">Crime</span>
+                        <span class="genre-tag">Drama</span>
+                        <span class="genre-tag">Thriller</span>
+                    </div>
+
+                    <div class="detail-buttons">
+                        <a href="video-player.html" class="btn btn-primary">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                            Watch Now
+                        </a>
+                        <button class="btn btn-secondary" onclick="addToMyList('Breaking Bad')">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                            Add to List
+                        </button>
+                        <button class="btn btn-secondary btn-icon" aria-label="Share">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="18" cy="5" r="3"></circle>
+                                <circle cx="6" cy="12" r="3"></circle>
+                                <circle cx="18" cy="19" r="3"></circle>
+                                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="synopsis">
+                        <h2 class="section-subtitle">Synopsis</h2>
+                        <p>
+                            A high school chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine in order to secure his family's future. As he descends deeper into the criminal underworld, his transformation from mild-mannered educator to ruthless drug kingpin challenges everything he believes about himself.
+                        </p>
+                        <p>
+                            Created by Vince Gilligan, Breaking Bad is widely regarded as one of the greatest television series of all time, praised for its acting, writing, directing, and character development.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Season Selector & Episodes -->
+            <section class="episodes-section">
+                <h2 class="section-subtitle">Episodes</h2>
+
+                <!-- Season Selector -->
+                <div class="season-selector-horizontal">
+                    <button class="season-btn-horizontal active" data-season="1">Season 1</button>
+                    <button class="season-btn-horizontal" data-season="2">Season 2</button>
+                    <button class="season-btn-horizontal" data-season="3">Season 3</button>
+                    <button class="season-btn-horizontal" data-season="4">Season 4</button>
+                    <button class="season-btn-horizontal" data-season="5">Season 5</button>
+                </div>
+
+                <!-- Episode Grid -->
+                <div class="episode-grid">
+                    <!-- Episode 1 - Continue Watching -->
+                    <div class="episode-card">
+                        <div class="episode-thumbnail-wrapper">
+                            <img src="https://placehold.co/400x225/1a1a1a/666666?text=Episode+1" alt="Episode 1 Thumbnail" class="episode-thumbnail-img">
+                            <div class="continue-watching-badge">Continue Watching</div>
+                            <button class="episode-play-btn" aria-label="Play Episode 1">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </button>
+                            <div class="episode-progress-overlay">
+                                <div class="episode-progress-bar-overlay" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div class="episode-card-info">
+                            <div class="episode-header-row">
+                                <h3 class="episode-title">1. Pilot</h3>
+                                <span class="episode-duration">58m</span>
+                            </div>
+                            <p class="episode-description">
+                                Diagnosed with terminal lung cancer, chemistry teacher Walter White teams up with former student Jesse Pinkman to cook and sell crystal meth.
+                            </p>
+                            <span class="episode-air-date">January 20, 2008</span>
+                        </div>
+                    </div>
+
+                    <!-- Episode 2 -->
+                    <div class="episode-card">
+                        <div class="episode-thumbnail-wrapper">
+                            <img src="https://placehold.co/400x225/1a1a1a/666666?text=Episode+2" alt="Episode 2 Thumbnail" class="episode-thumbnail-img">
+                            <button class="episode-play-btn" aria-label="Play Episode 2">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="episode-card-info">
+                            <div class="episode-header-row">
+                                <h3 class="episode-title">2. Cat's in the Bag...</h3>
+                                <span class="episode-duration">48m</span>
+                            </div>
+                            <p class="episode-description">
+                                Walt and Jesse attempt to dispose of the bodies, while Walt covers his tracks and Jesse's girlfriend discovers his secret.
+                            </p>
+                            <span class="episode-air-date">January 27, 2008</span>
+                        </div>
+                    </div>
+
+                    <!-- Episode 3 -->
+                    <div class="episode-card">
+                        <div class="episode-thumbnail-wrapper">
+                            <img src="https://placehold.co/400x225/1a1a1a/666666?text=Episode+3" alt="Episode 3 Thumbnail" class="episode-thumbnail-img">
+                            <button class="episode-play-btn" aria-label="Play Episode 3">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="episode-card-info">
+                            <div class="episode-header-row">
+                                <h3 class="episode-title">3. ...And the Bag's in the River</h3>
+                                <span class="episode-duration">48m</span>
+                            </div>
+                            <p class="episode-description">
+                                Walt and Jesse try to decide what to do with Krazy-8. Walt makes the choice to kill Krazy-8 to protect himself.
+                            </p>
+                            <span class="episode-air-date">February 10, 2008</span>
+                        </div>
+                    </div>
+
+                    <!-- Episode 4 -->
+                    <div class="episode-card">
+                        <div class="episode-thumbnail-wrapper">
+                            <img src="https://placehold.co/400x225/1a1a1a/666666?text=Episode+4" alt="Episode 4 Thumbnail" class="episode-thumbnail-img">
+                            <button class="episode-play-btn" aria-label="Play Episode 4">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="episode-card-info">
+                            <div class="episode-header-row">
+                                <h3 class="episode-title">4. Cancer Man</h3>
+                                <span class="episode-duration">48m</span>
+                            </div>
+                            <p class="episode-description">
+                                Walt tells the rest of his family about his cancer diagnosis. Jesse tries to make amends with his own family.
+                            </p>
+                            <span class="episode-air-date">February 17, 2008</span>
+                        </div>
+                    </div>
+
+                    <!-- Episode 5 -->
+                    <div class="episode-card">
+                        <div class="episode-thumbnail-wrapper">
+                            <img src="https://placehold.co/400x225/1a1a1a/666666?text=Episode+5" alt="Episode 5 Thumbnail" class="episode-thumbnail-img">
+                            <button class="episode-play-btn" aria-label="Play Episode 5">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="episode-card-info">
+                            <div class="episode-header-row">
+                                <h3 class="episode-title">5. Gray Matter</h3>
+                                <span class="episode-duration">48m</span>
+                            </div>
+                            <p class="episode-description">
+                                Walt rejects everyone's offers of help. Jesse's relationship with Jane continues to develop.
+                            </p>
+                            <span class="episode-air-date">February 24, 2008</span>
+                        </div>
+                    </div>
+
+                    <!-- Episode 6 -->
+                    <div class="episode-card">
+                        <div class="episode-thumbnail-wrapper">
+                            <img src="https://placehold.co/400x225/1a1a1a/666666?text=Episode+6" alt="Episode 6 Thumbnail" class="episode-thumbnail-img">
+                            <button class="episode-play-btn" aria-label="Play Episode 6">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="episode-card-info">
+                            <div class="episode-header-row">
+                                <h3 class="episode-title">6. Crazy Handful of Nothin'</h3>
+                                <span class="episode-duration">48m</span>
+                            </div>
+                            <p class="episode-description">
+                                Walt and Jesse seek a new distribution partner. Walt starts his treatment and experiences severe side effects.
+                            </p>
+                            <span class="episode-air-date">March 2, 2008</span>
+                        </div>
+                    </div>
+
+                    <!-- Episode 7 -->
+                    <div class="episode-card">
+                        <div class="episode-thumbnail-wrapper">
+                            <img src="https://placehold.co/400x225/1a1a1a/666666?text=Episode+7" alt="Episode 7 Thumbnail" class="episode-thumbnail-img">
+                            <button class="episode-play-btn" aria-label="Play Episode 7">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="episode-card-info">
+                            <div class="episode-header-row">
+                                <h3 class="episode-title">7. A No-Rough-Stuff-Type Deal</h3>
+                                <span class="episode-duration">48m</span>
+                            </div>
+                            <p class="episode-description">
+                                Walt and Jesse attempt to secure their new distribution line. Skyler becomes suspicious of Walt's behavior.
+                            </p>
+                            <span class="episode-air-date">March 9, 2008</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cast Section -->
+            <section class="cast-section">
+                <h2 class="section-subtitle">Cast</h2>
+                <div class="cast-grid">
+                    <div class="cast-card">
+                        <img src="https://ui-avatars.com/api/?name=Bryan+Cranston&size=200&background=1F1F1F&color=fff" alt="Bryan Cranston" class="cast-photo">
+                        <div class="cast-name">Bryan Cranston</div>
+                        <div class="cast-role">Walter White</div>
+                    </div>
+                    <div class="cast-card">
+                        <img src="https://ui-avatars.com/api/?name=Aaron+Paul&size=200&background=1F1F1F&color=fff" alt="Aaron Paul" class="cast-photo">
+                        <div class="cast-name">Aaron Paul</div>
+                        <div class="cast-role">Jesse Pinkman</div>
+                    </div>
+                    <div class="cast-card">
+                        <img src="https://ui-avatars.com/api/?name=Anna+Gunn&size=200&background=1F1F1F&color=fff" alt="Anna Gunn" class="cast-photo">
+                        <div class="cast-name">Anna Gunn</div>
+                        <div class="cast-role">Skyler White</div>
+                    </div>
+                    <div class="cast-card">
+                        <img src="https://ui-avatars.com/api/?name=Dean+Norris&size=200&background=1F1F1F&color=fff" alt="Dean Norris" class="cast-photo">
+                        <div class="cast-name">Dean Norris</div>
+                        <div class="cast-role">Hank Schrader</div>
+                    </div>
+                    <div class="cast-card">
+                        <img src="https://ui-avatars.com/api/?name=Betsy+Brandt&size=200&background=1F1F1F&color=fff" alt="Betsy Brandt" class="cast-photo">
+                        <div class="cast-name">Betsy Brandt</div>
+                        <div class="cast-role">Marie Schrader</div>
+                    </div>
+                    <div class="cast-card">
+                        <img src="https://ui-avatars.com/api/?name=RJ+Mitte&size=200&background=1F1F1F&color=fff" alt="RJ Mitte" class="cast-photo">
+                        <div class="cast-name">RJ Mitte</div>
+                        <div class="cast-role">Walter White Jr.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Crew Section -->
+            <section class="crew-section">
+                <h2 class="section-subtitle">Crew</h2>
+                <div class="crew-list">
+                    <div class="crew-item">
+                        <span class="crew-role">Creator</span>
+                        <span class="crew-name">Vince Gilligan</span>
+                    </div>
+                    <div class="crew-item">
+                        <span class="crew-role">Executive Producer</span>
+                        <span class="crew-name">Vince Gilligan</span>
+                    </div>
+                    <div class="crew-item">
+                        <span class="crew-role">Executive Producer</span>
+                        <span class="crew-name">Mark Johnson</span>
+                    </div>
+                    <div class="crew-item">
+                        <span class="crew-role">Executive Producer</span>
+                        <span class="crew-name">Michelle MacLaren</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reviews Section -->
+            <section class="reviews-section">
+                <h2 class="section-subtitle">Reviews</h2>
+
+                <div class="rating-overview">
+                    <div class="rating-score">
+                        <span class="score-number">9.5</span>
+                        <div class="score-stars">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFB800">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFB800">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFB800">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFB800">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFB800">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <span class="review-count">15,482 reviews</span>
+                    </div>
+                    <div class="rating-distribution">
+                        <div class="rating-bar">
+                            <span class="bar-label">5⭐</span>
+                            <div class="bar-container">
+                                <div class="bar-fill" style="width: 85%"></div>
+                            </div>
+                            <span class="bar-percentage">85%</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span class="bar-label">4⭐</span>
+                            <div class="bar-container">
+                                <div class="bar-fill" style="width: 10%"></div>
+                            </div>
+                            <span class="bar-percentage">10%</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span class="bar-label">3⭐</span>
+                            <div class="bar-container">
+                                <div class="bar-fill" style="width: 3%"></div>
+                            </div>
+                            <span class="bar-percentage">3%</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span class="bar-label">2⭐</span>
+                            <div class="bar-container">
+                                <div class="bar-fill" style="width: 1%"></div>
+                            </div>
+                            <span class="bar-percentage">1%</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span class="bar-label">1⭐</span>
+                            <div class="bar-container">
+                                <div class="bar-fill" style="width: 1%"></div>
+                            </div>
+                            <span class="bar-percentage">1%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sign In to Write Review Button -->
+                <div style="margin-bottom: 32px;">
+                    <button class="btn btn-primary" onclick="openSignInModal()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                        </svg>
+                        Sign in to write a review
+                    </button>
+                </div>
+
+                <div class="reviews-list">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="https://ui-avatars.com/api/?name=John+Doe&size=48&background=E50914&color=fff" alt="John Doe" class="review-avatar">
+                            <div class="review-user-info">
+                                <div class="review-author">John Doe</div>
+                                <div class="review-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB800">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    5.0
+                                    <span class="review-date">2 days ago</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="review-text">
+                            Absolutely phenomenal series. Breaking Bad is a masterclass in storytelling, character development, and tension building. Bryan Cranston's transformation from mild-mannered teacher to ruthless drug lord is nothing short of spectacular. Every episode keeps you on the edge of your seat. A must-watch!
+                        </p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="https://ui-avatars.com/api/?name=Sarah+Smith&size=48&background=E50914&color=fff" alt="Sarah Smith" class="review-avatar">
+                            <div class="review-user-info">
+                                <div class="review-author">Sarah Smith</div>
+                                <div class="review-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB800">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    5.0
+                                    <span class="review-date">1 week ago</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="review-text">
+                            One of the best TV series ever made. The writing is incredible, the acting is superb, and the cinematography is stunning. Vince Gilligan created something truly special. The character arcs are perfectly executed, and the ending was satisfying.
+                        </p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="https://ui-avatars.com/api/?name=Mike+Johnson&size=48&background=E50914&color=fff" alt="Mike Johnson" class="review-avatar">
+                            <div class="review-user-info">
+                                <div class="review-author">Mike Johnson</div>
+                                <div class="review-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB800">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    5.0
+                                    <span class="review-date">2 weeks ago</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="review-text">
+                            Breaking Bad deserves every bit of praise it gets. The storytelling is tight, the pacing is perfect, and every character feels real and fully developed. Jesse and Walt's dynamic is captivating to watch evolve. This show set the bar for television drama.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- More Like This Section -->
+            <section class="similar-movies-section">
+                <h2 class="section-subtitle">More Like This</h2>
+                <div class="similar-grid">
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://placehold.co/280x420/1a1a1a/666666?text=Better+Call+Saul" alt="Better Call Saul">
+                        </div>
+                        <div class="movie-overlay">
+                            <h3 class="movie-title">Better Call Saul</h3>
+                            <div class="movie-info">
+                                <span class="movie-year">2015</span>
+                                <div class="movie-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB800">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <span>9.0</span>
+                                </div>
+                            </div>
+                            <div class="movie-actions">
+                                <button class="action-btn" aria-label="Play">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </button>
+                                <button class="action-btn" aria-label="Add to list">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </button>
+                                <button class="action-btn" aria-label="More info">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://placehold.co/280x420/1a1a1a/666666?text=The+Sopranos" alt="The Sopranos">
+                        </div>
+                        <div class="movie-overlay">
+                            <h3 class="movie-title">The Sopranos</h3>
+                            <div class="movie-info">
+                                <span class="movie-year">1999</span>
+                                <div class="movie-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB800">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <span>9.2</span>
+                                </div>
+                            </div>
+                            <div class="movie-actions">
+                                <button class="action-btn" aria-label="Play">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </button>
+                                <button class="action-btn" aria-label="Add to list">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </button>
+                                <button class="action-btn" aria-label="More info">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://placehold.co/280x420/1a1a1a/666666?text=Ozark" alt="Ozark">
+                        </div>
+                        <div class="movie-overlay">
+                            <h3 class="movie-title">Ozark</h3>
+                            <div class="movie-info">
+                                <span class="movie-year">2017</span>
+                                <div class="movie-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB800">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <span>8.5</span>
+                                </div>
+                            </div>
+                            <div class="movie-actions">
+                                <button class="action-btn" aria-label="Play">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </button>
+                                <button class="action-btn" aria-label="Add to list">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </button>
+                                <button class="action-btn" aria-label="More info">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="https://placehold.co/280x420/1a1a1a/666666?text=The+Wire" alt="The Wire">
+                        </div>
+                        <div class="movie-overlay">
+                            <h3 class="movie-title">The Wire</h3>
+                            <div class="movie-info">
+                                <span class="movie-year">2002</span>
+                                <div class="movie-rating">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFB800">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <span>9.3</span>
+                                </div>
+                            </div>
+                            <div class="movie-actions">
+                                <button class="action-btn" aria-label="Play">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </button>
+                                <button class="action-btn" aria-label="Add to list">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </button>
+                                <button class="action-btn" aria-label="More info">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#press">Press</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="help-center.html">Help Center</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="help-center.html">FAQ</a></li>
+                        <li><a href="#feedback">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="#cookie">Cookie Policy</a></li>
+                        <li><a href="#disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#facebook" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#twitter" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#instagram" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="#141414"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#141414" stroke-width="2"></line>
+                            </svg>
+                        </a>
+                        <a href="#youtube" aria-label="YouTube">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#141414"></polygon>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Movie Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sign-In Modal -->
+    <div id="signin-modal" class="signin-modal" role="dialog" aria-labelledby="signin-modal-title" aria-modal="true">
+        <div class="signin-modal-overlay" aria-hidden="true"></div>
+        <div class="signin-modal-content">
+            <button class="signin-modal-close" aria-label="Close sign-in modal">&times;</button>
+
+            <div class="signin-modal-logo">
+                <svg width="60" height="60" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="6" fill="#E50914"/>
+                    <path d="M10 10L20 20L10 30V10Z" fill="white"/>
+                    <path d="M20 10L30 20L20 30V10Z" fill="white" opacity="0.7"/>
+                </svg>
+            </div>
+
+            <h2 id="signin-modal-title">Sign in to continue</h2>
+            <p class="signin-modal-subtitle">Sign in to save shows to your list and write reviews</p>
+
+            <button class="google-signin-btn">
+                <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                </svg>
+                Sign in with Google
+            </button>
+
+            <p class="signin-modal-privacy">
+                By signing in, you agree to our <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
