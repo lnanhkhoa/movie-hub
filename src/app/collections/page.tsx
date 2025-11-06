@@ -7,15 +7,15 @@ import { mockCollections } from '@/lib/mock-data'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Collections - Movie Hub',
-  description: 'Curated movie collections',
+  title: 'Collections - Theta Movies',
+  description: 'Curated movie collections'
 }
 
 export default function CollectionsPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-background">
+      <main className="min-h-screen bg-background pt-[70px]">
         <div className="container mx-auto px-4 lg:px-8 py-8 md:py-12">
           <h1 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8">Collections</h1>
 

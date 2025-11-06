@@ -1,10 +1,10 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Play, Plus, Star } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import type { Movie } from "@/lib/types"
-import { IS_HIDE_AUTH } from "@/config/env"
+import Image from 'next/image'
+import Link from 'next/link'
+import { Play, Plus, Star } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+// import { Badge } from "@/components/ui/badge"
+import type { Movie } from '@/lib/types'
+import { IS_HIDE_AUTH } from '@/config/env'
 
 interface HeroSectionProps {
   movie: Movie
@@ -27,9 +27,11 @@ export function HeroSection({ movie }: HeroSectionProps) {
       </div>
 
       {/* Gradient Overlay */}
-      <div className="absolute bottom-0 left-0 right-0 h-[60%] z-[2]"
+      <div
+        className="absolute bottom-0 left-0 right-0 h-[60%] z-[2]"
         style={{
-          background: 'linear-gradient(to top, rgb(20, 20, 20) 0%, rgba(20, 20, 20, 0.8) 50%, transparent 100%)'
+          background:
+            'linear-gradient(to top, rgb(20, 20, 20) 0%, rgba(20, 20, 20, 0.8) 50%, transparent 100%)'
         }}
       />
 
@@ -43,7 +45,10 @@ export function HeroSection({ movie }: HeroSectionProps) {
           <div className="flex flex-wrap items-center gap-4">
             <div className="flex items-center gap-1">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-5 w-5 fill-gold text-gold drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]" />
+                <Star
+                  key={i}
+                  className="h-5 w-5 fill-gold text-gold drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
+                />
               ))}
               <span className="ml-2 font-semibold text-gold text-lg">{movie.rating}</span>
             </div>

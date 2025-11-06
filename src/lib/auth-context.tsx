@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import React, { createContext, useContext, useState, useEffect } from 'react'
 import type { User } from './types'
@@ -45,7 +45,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       name: 'John Doe',
       email: 'john@example.com',
       avatarUrl: 'https://avatar.vercel.sh/john',
-      watchlist: [],
+      watchlist: []
     }
     setUser(mockUser)
   }
@@ -59,7 +59,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (user.watchlist.includes(movieId)) return
     setUser({
       ...user,
-      watchlist: [...user.watchlist, movieId],
+      watchlist: [...user.watchlist, movieId]
     })
   }
 
@@ -67,7 +67,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (!user) return
     setUser({
       ...user,
-      watchlist: user.watchlist.filter(id => id !== movieId),
+      watchlist: user.watchlist.filter((id) => id !== movieId)
     })
   }
 
@@ -84,7 +84,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         signOut,
         addToWatchlist,
         removeFromWatchlist,
-        isInWatchlist,
+        isInWatchlist
       }}
     >
       {children}

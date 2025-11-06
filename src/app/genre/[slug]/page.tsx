@@ -7,7 +7,18 @@ import { Badge } from '@/components/ui/badge'
 import { mockMovies } from '@/lib/mock-data'
 import type { Metadata } from 'next'
 
-const GENRES = ['Action', 'Comedy', 'Drama', 'Horror', 'Sci-Fi', 'Thriller', 'Romance', 'Crime', 'Adventure', 'Fantasy']
+const GENRES = [
+  'Action',
+  'Comedy',
+  'Drama',
+  'Horror',
+  'Sci-Fi',
+  'Thriller',
+  'Romance',
+  'Crime',
+  'Adventure',
+  'Fantasy'
+]
 
 interface GenrePageProps {
   params: Promise<{ slug: string }>
@@ -18,17 +29,17 @@ export async function generateMetadata({ params }: GenrePageProps): Promise<Meta
   const genreName = slug.charAt(0).toUpperCase() + slug.slice(1)
 
   return {
-    title: `${genreName} Movies - Movie Hub`,
-    description: `Browse ${genreName} movies on Movie Hub`,
+    title: `${genreName} Movies - Theta Movies`,
+    description: `Browse ${genreName} movies on Theta Movies`
   }
 }
 
 export async function generateStaticParams() {
   return [
     { slug: 'all' },
-    ...GENRES.map(genre => ({
-      slug: genre.toLowerCase(),
-    })),
+    ...GENRES.map((genre) => ({
+      slug: genre.toLowerCase()
+    }))
   ]
 }
 
@@ -36,11 +47,10 @@ export default async function GenrePage({ params }: GenrePageProps) {
   const { slug } = await params
   const genreName = slug === 'all' ? 'All' : slug.charAt(0).toUpperCase() + slug.slice(1)
 
-  const filteredMovies = slug === 'all'
-    ? mockMovies
-    : mockMovies.filter(m =>
-        m.genre.some(g => g.toLowerCase() === slug.toLowerCase())
-      )
+  const filteredMovies =
+    slug === 'all'
+      ? mockMovies
+      : mockMovies.filter((m) => m.genre.some((g) => g.toLowerCase() === slug.toLowerCase()))
 
   if (filteredMovies.length === 0 && slug !== 'all') {
     notFound()
@@ -49,7 +59,7 @@ export default async function GenrePage({ params }: GenrePageProps) {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-background">
+      <main className="min-h-screen bg-background pt-[70px]">
         <div className="container mx-auto px-4 lg:px-8 py-8 md:py-12">
           <div className="mb-6 md:mb-8">
             <h1 className="text-3xl md:text-4xl font-bold mb-4">{genreName} Movies</h1>
@@ -58,10 +68,7 @@ export default async function GenrePage({ params }: GenrePageProps) {
 
           <div className="flex flex-wrap gap-2 mb-6 md:mb-8">
             <Link href="/genre/all">
-              <Badge
-                variant={slug === 'all' ? 'default' : 'outline'}
-                className="cursor-pointer"
-              >
+              <Badge variant={slug === 'all' ? 'default' : 'outline'} className="cursor-pointer">
                 All
               </Badge>
             </Link>

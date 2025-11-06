@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { useRef } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
@@ -18,9 +18,10 @@ export function Carousel({ title, movies }: CarouselProps) {
     if (!scrollRef.current) return
 
     const scrollAmount = scrollRef.current.clientWidth * 0.8
-    const targetScroll = direction === 'left'
-      ? scrollRef.current.scrollLeft - scrollAmount
-      : scrollRef.current.scrollLeft + scrollAmount
+    const targetScroll =
+      direction === 'left'
+        ? scrollRef.current.scrollLeft - scrollAmount
+        : scrollRef.current.scrollLeft + scrollAmount
 
     scrollRef.current.scrollTo({
       left: targetScroll,
@@ -54,7 +55,7 @@ export function Carousel({ title, movies }: CarouselProps) {
 
       <div
         ref={scrollRef}
-        className="flex gap-4 overflow-x-auto px-[50px] scroll-smooth"
+        className="flex gap-4 overflow-x-auto overflow-y-hidden px-[50px] scroll-smooth"
         style={{
           scrollbarWidth: 'none',
           msOverflowStyle: 'none'

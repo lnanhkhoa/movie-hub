@@ -1,7 +1,7 @@
-# Movie Hub - Design Guidelines
+# Theta Movies - Design Guidelines
 
 ## Overview
-This document outlines the design system and guidelines for Movie Hub, a modern movie streaming platform with a Netflix-inspired dark theme that prioritizes content discovery and user experience.
+This document outlines the design system and guidelines for **Theta Movies** (formerly Movie Hub), a modern movie streaming platform with a Netflix-inspired dark theme that prioritizes content discovery and user experience.
 
 ## Design Philosophy
 - **Content First**: Let movie posters and visuals take center stage
@@ -9,6 +9,73 @@ This document outlines the design system and guidelines for Movie Hub, a modern 
 - **Dark by Default**: Reduce eye strain during extended viewing sessions
 - **Smooth & Responsive**: Fluid animations and seamless interactions
 - **Accessible**: WCAG 2.1 AA compliant for all users
+- **Intelligent Perspective**: Theta (θ) represents the angle of view—smart, curated content discovery
+
+---
+
+## Brand Identity
+
+### Brand Name: Theta Movies
+
+**Meaning & Symbolism:**
+- **Theta (θ)**: Greek letter representing angles, perspective, and measurement
+- **Symbolic Meaning**: Intelligent angle of approach, curated perspective on content
+- **Modern Association**: Tech-forward, sophisticated, mathematical precision
+- **Lowercase Styling**: "theta movies" for contemporary, approachable feel
+
+### Logo System
+
+We've developed three distinct logo concepts, each optimized for different use cases:
+
+#### Concept A: Minimalist Icon
+- **Style**: Bold theta (Θ) symbol in a filled circle
+- **Best For**: Favicons, app icons, social media profiles, loading states
+- **Strength**: Instantly recognizable, scales perfectly to any size
+- **Files**: `theta-movies-concept-a-icon.svg`, `theta-movies-concept-a-icon-white.svg`
+
+#### Concept B: Integrated Wordmark
+- **Style**: "theta movies" with θ symbol embedded in typography
+- **Best For**: Marketing materials, email signatures, documents
+- **Strength**: Clear brand name with creative symbol integration
+- **Files**: `theta-movies-concept-b-wordmark.svg`, `theta-movies-concept-b-wordmark-alt.svg`
+
+#### Concept C: Badge Combination (Recommended Primary)
+- **Style**: Circular badge icon paired with text
+- **Best For**: Primary logo across website, navbar, marketing campaigns
+- **Strength**: Maximum versatility, professional appearance
+- **Files**: `theta-movies-concept-c-horizontal.svg`, `theta-movies-concept-c-vertical.svg`
+
+**Premium Variations:**
+- Gradient version: Red-to-gold gradient for special features
+- Gold version: Luxurious gold color scheme for premium content
+
+**See full logo guidelines:** `/docs/logo-usage-guide.md`
+
+### Logo Usage in Code
+
+**Navbar Implementation:**
+```tsx
+import Image from 'next/image'
+
+<Image
+  src="/logos/theta-movies-concept-c-horizontal.svg"
+  alt="Theta Movies"
+  width={160}
+  height={40}
+  priority
+/>
+```
+
+**Favicon Configuration:**
+```tsx
+// app/layout.tsx
+export const metadata = {
+  title: 'Theta Movies',
+  icons: {
+    icon: '/logos/theta-movies-favicon.svg',
+  },
+}
+```
 
 ---
 
@@ -392,6 +459,11 @@ Consider implementing design tokens for easier theme customization:
 ---
 
 ## Version History
+- **v1.1** (2025-11-06): Brand evolution to Theta Movies
+  - Introduced new logo system with three distinct concepts
+  - Created comprehensive logo usage guidelines
+  - Maintained existing color palette and design system
+  - Enhanced brand identity with theta (θ) symbolism
 - **v1.0** (2025-11-03): Initial design system documentation
   - Established color palette, typography, and component library
   - Defined responsive breakpoints and accessibility standards
@@ -399,5 +471,5 @@ Consider implementing design tokens for easier theme customization:
 
 ---
 
-**Last Updated**: November 3, 2025
-**Maintained By**: Movie Hub Design Team
+**Last Updated**: November 6, 2025
+**Maintained By**: Theta Movies Design Team

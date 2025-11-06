@@ -5,8 +5,8 @@ import { Play, Users, Film, Award } from 'lucide-react'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About Us - Movie Hub',
-  description: 'Learn more about Movie Hub',
+  title: 'About Us - Theta Movies',
+  description: 'Learn more about Theta Movies'
 }
 
 export default function AboutPage() {
@@ -43,11 +43,11 @@ export default function AboutPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-background">
+      <main className="min-h-screen bg-background pt-[70px]">
         <div className="container mx-auto px-4 lg:px-8 py-8 md:py-12">
           <div className="max-w-4xl mx-auto space-y-8 md:space-y-12">
             <div className="text-center space-y-4">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">About Movie Hub</h1>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">About Theta Movies</h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
                 Your free destination for discovering and watching movies and TV shows
               </p>
@@ -57,10 +57,14 @@ export default function AboutPage() {
 
             <div className="space-y-6 text-muted-foreground">
               <p className="text-base md:text-lg">
-                Founded in 2025, Movie Hub believes that entertainment should be accessible to everyone. We provide a platform where movie enthusiasts can discover, watch, and share their favorite content without barriers.
+                Founded in 2025, Theta Movies believes that entertainment should be accessible to
+                everyone. We provide a platform where movie enthusiasts can discover, watch, and
+                share their favorite content without barriers.
               </p>
               <p className="text-base md:text-lg">
-                Our mission is to create the ultimate destination for movie lovers worldwide, offering a seamless experience across all devices with personalized recommendations and curated collections.
+                Our mission is to create the ultimate destination for movie lovers worldwide,
+                offering a seamless experience across all devices with personalized recommendations
+                and curated collections.
               </p>
             </div>
 
@@ -70,9 +74,7 @@ export default function AboutPage() {
                   <div className="text-3xl md:text-4xl font-bold text-netflix-red mb-2">
                     {stat.value}
                   </div>
-                  <div className="text-sm md:text-base text-muted-foreground">
-                    {stat.label}
-                  </div>
+                  <div className="text-sm md:text-base text-muted-foreground">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -81,11 +83,14 @@ export default function AboutPage() {
 
             <div>
               <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-center">
-                Why Choose Movie Hub
+                Why Choose Theta Movies
               </h2>
               <div className="grid md:grid-cols-2 gap-6 md:gap-8">
                 {features.map((feature, index) => (
-                  <div key={index} className="flex gap-4 p-6 rounded-lg bg-card hover:bg-accent transition-colors">
+                  <div
+                    key={index}
+                    className="flex gap-4 p-6 rounded-lg bg-card hover:bg-accent transition-colors"
+                  >
                     <div className="flex-none">
                       <feature.icon className="h-8 w-8 text-netflix-red" />
                     </div>

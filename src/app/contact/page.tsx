@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { Navbar } from '@/components/layout/navbar'
 import { Footer } from '@/components/layout/footer'
@@ -6,7 +6,13 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Separator } from '@/components/ui/separator'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
+} from '@/components/ui/select'
 import { Mail, MessageSquare, Phone } from 'lucide-react'
 import { toast } from 'sonner'
 
@@ -19,7 +25,7 @@ export default function ContactPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-background">
+      <main className="min-h-screen bg-background pt-[70px]">
         <div className="container mx-auto px-4 lg:px-8 py-8 md:py-12">
           <div className="max-w-2xl mx-auto space-y-6 md:space-y-8">
             <div>
@@ -101,9 +107,7 @@ export default function ContactPage() {
             </form>
 
             <div className="pt-6 text-center">
-              <p className="text-sm text-muted-foreground">
-                We typically respond within 24 hours
-              </p>
+              <p className="text-sm text-muted-foreground">We typically respond within 24 hours</p>
             </div>
           </div>
         </div>

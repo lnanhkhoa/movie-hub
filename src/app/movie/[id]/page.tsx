@@ -1,17 +1,18 @@
-import { notFound } from "next/navigation"
-import Image from "next/image"
-import Link from "next/link"
-import { Play, Plus, Star } from "lucide-react"
-import { Navbar } from "@/components/layout/navbar"
-import { Footer } from "@/components/layout/footer"
-import { Button } from "@/components/ui/button"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Badge } from "@/components/ui/badge"
-import { Separator } from "@/components/ui/separator"
-import { Carousel } from "@/components/movie/carousel"
-import { mockMovies } from "@/lib/mock-data"
-import type { Metadata } from "next"
-import { IS_HIDE_AUTH } from "@/config/env"
+import { notFound } from 'next/navigation'
+import Image from 'next/image'
+import Link from 'next/link'
+import { Play, Plus, Star } from 'lucide-react'
+import { Navbar } from '@/components/layout/navbar'
+import { Footer } from '@/components/layout/footer'
+import { Button } from '@/components/ui/button'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { Badge } from '@/components/ui/badge'
+import { Separator } from '@/components/ui/separator'
+import { Carousel } from '@/components/movie/carousel'
+import { ACTIVE_MOVIE_ID, mockMovies } from '@/lib/mock-data'
+import type { Metadata } from 'next'
+import { IS_HIDE_AUTH } from '@/config/env'
+import { cn } from '@/lib/utils'
 
 interface MovieDetailPageProps {
   params: Promise<{ id: string }>
@@ -21,10 +22,10 @@ export async function generateMetadata({ params }: MovieDetailPageProps): Promis
   const { id } = await params
   const movie = mockMovies.find((m) => m.id === id)
 
-  if (!movie) return { title: "Movie Not Found" }
+  if (!movie) return { title: 'Movie Not Found' }
   return {
-    title: `${movie.title} (${movie.year}) - Movie Hub`,
-    description: movie.description,
+    title: `${movie.title} (${movie.year}) - Theta Movies`,
+    description: movie.description
   }
 }
 
@@ -35,10 +36,9 @@ export async function generateStaticParams() {
 export default async function MovieDetailPage({ params }: MovieDetailPageProps) {
   const { id } = await params
   const movie = mockMovies.find((m) => m.id === id)
+  const inActiveMovie = id !== ACTIVE_MOVIE_ID
 
-  if (!movie) {
-    notFound()
-  }
+  if (!movie) notFound()
 
   const similarMovies = mockMovies
     .filter((m) => m.id !== movie.id && m.genre.some((g) => movie.genre.includes(g)))
@@ -47,7 +47,7 @@ export default async function MovieDetailPage({ params }: MovieDetailPageProps) 
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-background">
+      <main className="min-h-screen bg-background pt-[70px]">
         <div className="relative h-[400px] md:h-[500px] w-full">
           <Image
             src={movie.backdropUrl}
@@ -104,12 +104,19 @@ export default async function MovieDetailPage({ params }: MovieDetailPageProps) 
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
-                <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
-                  <Link href={`/watch/${movie.id}`}>
-                    <Play className="mr-2 h-5 w-5 fill-current" />
-                    Play Now
-                  </Link>
-                </Button>
+                <Link
+                  href={`/watch/${movie.id}`}
+                  className={cn(
+                    'inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-11 px-8',
+                    inActiveMovie
+                      ? 'border border-input bg-background hover:bg-accent hover:text-accent-foreground opacity-50 pointer-events-none'
+                      : 'bg-primary text-primary-foreground hover:bg-primary/90'
+                  )}
+                  aria-disabled={inActiveMovie}
+                >
+                  <Play className="mr-2 h-5 w-5 fill-current" />
+                  Play Now
+                </Link>
                 {!IS_HIDE_AUTH && (
                   <Button size="lg" variant="outline">
                     <Plus className="mr-2 h-5 w-5" />

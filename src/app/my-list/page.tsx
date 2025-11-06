@@ -1,15 +1,15 @@
-"use client"
+'use client'
 
-import { Navbar } from "@/components/layout/navbar"
-import { Footer } from "@/components/layout/footer"
-import { MovieCard } from "@/components/movie/movie-card"
-import { Button } from "@/components/ui/button"
-import { useAuth } from "@/lib/auth-context"
-import { useState } from "react"
-import { SignInModal } from "@/components/auth/sign-in-modal"
-import { mockMovies } from "@/lib/mock-data"
-import { cn } from "@/lib/utils"
-import { IS_HIDE_AUTH } from "@/config/env"
+import { Navbar } from '@/components/layout/navbar'
+import { Footer } from '@/components/layout/footer'
+import { MovieCard } from '@/components/movie/movie-card'
+import { Button } from '@/components/ui/button'
+import { useAuth } from '@/lib/auth-context'
+import { useState } from 'react'
+import { SignInModal } from '@/components/auth/sign-in-modal'
+import { mockMovies } from '@/lib/mock-data'
+import { cn } from '@/lib/utils'
+import { IS_HIDE_AUTH } from '@/config/env'
 
 export default function MyListPage() {
   const { user, isAuthenticated } = useAuth()
@@ -19,7 +19,7 @@ export default function MyListPage() {
     return (
       <>
         <Navbar />
-        <main className="min-h-screen bg-background">
+        <main className="min-h-screen bg-background pt-[70px]">
           <div className="container mx-auto px-4 lg:px-8 py-16 md:py-32">
             <div className="text-center max-w-md mx-auto space-y-6">
               <h1 className="text-3xl md:text-4xl font-bold">Sign in to access your list</h1>
@@ -29,7 +29,7 @@ export default function MyListPage() {
               <Button
                 onClick={() => setSignInOpen(true)}
                 size="lg"
-                className={cn("", IS_HIDE_AUTH && "hidden")}
+                className={cn('', IS_HIDE_AUTH && 'hidden')}
               >
                 Sign In
               </Button>
@@ -47,12 +47,12 @@ export default function MyListPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-background">
+      <main className="min-h-screen bg-background pt-[70px]">
         <div className="container mx-auto px-4 lg:px-8 py-8 md:py-12">
           <div className="mb-6 md:mb-8">
             <h1 className="text-3xl md:text-4xl font-bold mb-4">My List</h1>
             <p className="text-muted-foreground">
-              {watchlistMovies.length} {watchlistMovies.length === 1 ? "movie" : "movies"} in your
+              {watchlistMovies.length} {watchlistMovies.length === 1 ? 'movie' : 'movies'} in your
               list
             </p>
           </div>

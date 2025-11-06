@@ -6,15 +6,16 @@ import { mockMovies } from '@/lib/mock-data'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Movie Hub - Stream Your Favorite Movies & TV Shows',
-  description: 'Watch the latest movies and TV shows. Stream unlimited entertainment on Movie Hub.',
+  title: 'Theta Movies - Stream Your Favorite Movies & TV Shows',
+  description:
+    'Watch the latest movies and TV shows. Stream unlimited entertainment on Theta Movies.'
 }
 
 export default function HomePage() {
-  const featuredMovie = mockMovies[0]
+  const featuredMovie = mockMovies[2]
   const trendingMovies = mockMovies.slice(0, 10)
   const popularMovies = mockMovies.slice(5, 15)
-  const actionMovies = mockMovies.filter(m => m.genre.includes('Action'))
+  const actionMovies = mockMovies.filter((m) => m.genre.includes('Action'))
 
   return (
     <>

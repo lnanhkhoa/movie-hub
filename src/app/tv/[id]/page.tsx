@@ -15,27 +15,27 @@ interface TVShowDetailPageProps {
 
 export async function generateMetadata({ params }: TVShowDetailPageProps): Promise<Metadata> {
   const { id } = await params
-  const show = mockTVShows.find(s => s.id === id)
+  const show = mockTVShows.find((s) => s.id === id)
 
   if (!show) {
     return { title: 'TV Show Not Found' }
   }
 
   return {
-    title: `${show.title} (${show.year}) - Movie Hub`,
-    description: show.description,
+    title: `${show.title} (${show.year}) - Theta Movies`,
+    description: show.description
   }
 }
 
 export async function generateStaticParams() {
-  return mockTVShows.map(show => ({
-    id: show.id,
+  return mockTVShows.map((show) => ({
+    id: show.id
   }))
 }
 
 export default async function TVShowDetailPage({ params }: TVShowDetailPageProps) {
   const { id } = await params
-  const show = mockTVShows.find(s => s.id === id)
+  const show = mockTVShows.find((s) => s.id === id)
 
   if (!show) {
     notFound()
@@ -44,7 +44,7 @@ export default async function TVShowDetailPage({ params }: TVShowDetailPageProps
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-background">
+      <main className="min-h-screen bg-background pt-[70px]">
         <div className="relative h-[400px] md:h-[500px] w-full">
           <Image
             src={show.backdropUrl}
@@ -78,7 +78,9 @@ export default async function TVShowDetailPage({ params }: TVShowDetailPageProps
 
               <div className="flex items-center gap-4">
                 <Star className="h-5 w-5 md:h-6 md:w-6 fill-gold text-gold" />
-                <span className="text-xl md:text-2xl font-semibold text-gold">{show.rating}/10</span>
+                <span className="text-xl md:text-2xl font-semibold text-gold">
+                  {show.rating}/10
+                </span>
               </div>
 
               <div className="flex flex-wrap gap-2">
@@ -108,14 +110,19 @@ export default async function TVShowDetailPage({ params }: TVShowDetailPageProps
                   ))}
                 </TabsList>
                 {show.seasons.map((season) => (
-                  <TabsContent key={season.seasonNumber} value={`season-${season.seasonNumber}`} className="space-y-4 pt-4">
-                    <p className="text-muted-foreground">
-                      {season.episodeCount} episodes
-                    </p>
+                  <TabsContent
+                    key={season.seasonNumber}
+                    value={`season-${season.seasonNumber}`}
+                    className="space-y-4 pt-4"
+                  >
+                    <p className="text-muted-foreground">{season.episodeCount} episodes</p>
                     {season.episodes.length > 0 && (
                       <div className="space-y-4">
                         {season.episodes.map((episode) => (
-                          <div key={episode.episodeNumber} className="flex gap-4 p-4 rounded-lg bg-card hover:bg-accent transition-colors">
+                          <div
+                            key={episode.episodeNumber}
+                            className="flex gap-4 p-4 rounded-lg bg-card hover:bg-accent transition-colors"
+                          >
                             <div className="relative flex-none w-32 md:w-40 aspect-video rounded overflow-hidden bg-muted">
                               <Image
                                 src={episode.thumbnailUrl}
@@ -130,8 +137,12 @@ export default async function TVShowDetailPage({ params }: TVShowDetailPageProps
                               <h4 className="font-semibold mb-1">
                                 {episode.episodeNumber}. {episode.title}
                               </h4>
-                              <p className="text-xs md:text-sm text-muted-foreground mb-2">{episode.duration}</p>
-                              <p className="text-xs md:text-sm text-muted-foreground line-clamp-2">{episode.description}</p>
+                              <p className="text-xs md:text-sm text-muted-foreground mb-2">
+                                {episode.duration}
+                              </p>
+                              <p className="text-xs md:text-sm text-muted-foreground line-clamp-2">
+                                {episode.description}
+                              </p>
                               <Button size="sm" variant="outline" className="mt-2">
                                 <Play className="mr-2 h-3 w-3" />
                                 Play

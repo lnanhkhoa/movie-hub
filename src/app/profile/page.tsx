@@ -1,18 +1,18 @@
-"use client"
+'use client'
 
-import { Navbar } from "@/components/layout/navbar"
-import { Footer } from "@/components/layout/footer"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Separator } from "@/components/ui/separator"
-import { useAuth } from "@/lib/auth-context"
-import { useState } from "react"
-import { SignInModal } from "@/components/auth/sign-in-modal"
-import { toast } from "sonner"
-import Image from "next/image"
-import { IS_HIDE_AUTH } from "@/config/env"
-import { cn } from "@/lib/utils"
+import { Navbar } from '@/components/layout/navbar'
+import { Footer } from '@/components/layout/footer'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Separator } from '@/components/ui/separator'
+import { useAuth } from '@/lib/auth-context'
+import { useState } from 'react'
+import { SignInModal } from '@/components/auth/sign-in-modal'
+import { toast } from 'sonner'
+import Image from 'next/image'
+import { IS_HIDE_AUTH } from '@/config/env'
+import { cn } from '@/lib/utils'
 
 export default function ProfilePage() {
   const { user, isAuthenticated } = useAuth()
@@ -20,21 +20,21 @@ export default function ProfilePage() {
 
   const handleSave = (e: React.FormEvent) => {
     e.preventDefault()
-    toast.success("Profile updated successfully")
+    toast.success('Profile updated successfully')
   }
 
   if (!isAuthenticated) {
     return (
       <>
         <Navbar />
-        <main className="min-h-screen bg-background">
+        <main className="min-h-screen bg-background pt-[70px]">
           <div className="container mx-auto px-4 lg:px-8 py-16 md:py-32">
             <div className="text-center max-w-md mx-auto space-y-6">
               <h1 className="text-3xl md:text-4xl font-bold">Sign in to view your profile</h1>
               <Button
                 onClick={() => setSignInOpen(true)}
                 size="lg"
-                className={cn("", IS_HIDE_AUTH && "hidden")}
+                className={cn('', IS_HIDE_AUTH && 'hidden')}
               >
                 Sign In
               </Button>
@@ -50,7 +50,7 @@ export default function ProfilePage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-background">
+      <main className="min-h-screen bg-background pt-[70px]">
         <div className="container mx-auto px-4 lg:px-8 py-8 md:py-12">
           <div className="max-w-2xl mx-auto space-y-6 md:space-y-8">
             <div>
@@ -63,8 +63,8 @@ export default function ProfilePage() {
             <div className="space-y-6">
               <div className="flex items-center gap-6">
                 <Image
-                  src={user?.avatarUrl || ""}
-                  alt={user?.name || "User avatar"}
+                  src={user?.avatarUrl || ''}
+                  alt={user?.name || 'User avatar'}
                   width={96}
                   height={96}
                   className="w-20 h-20 md:w-24 md:h-24 rounded-full"
