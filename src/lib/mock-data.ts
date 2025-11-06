@@ -10,8 +10,8 @@ export const mockMovies: Movie[] = [
     duration: '2h 28m',
     ageRating: 'PG-13',
     description: 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O., but his tragic past may doom the project and his team to disaster.',
-    posterUrl: 'https://placehold.co/280x420/1a1a1a/666666?text=Inception',
-    backdropUrl: 'https://placehold.co/1920x1080/1a1a1a/666666?text=Inception+Backdrop',
+    posterUrl: 'https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg',
+    backdropUrl: 'https://image.tmdb.org/t/p/original/s3TBrRGB1iav7gFOCNx3H31MoES.jpg',
     trailerUrl: '',
     cast: [
       {
@@ -62,8 +62,8 @@ export const mockMovies: Movie[] = [
     duration: '2h 32m',
     ageRating: 'PG-13',
     description: 'When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.',
-    posterUrl: 'https://placehold.co/280x420/1a1a1a/666666?text=Dark+Knight',
-    backdropUrl: 'https://placehold.co/1920x1080/1a1a1a/666666?text=Dark+Knight+Backdrop',
+    posterUrl: 'https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg',
+    backdropUrl: 'https://image.tmdb.org/t/p/original/hkBaDkMWbLaf8B1lsWsKX7Ew3Xq.jpg',
     cast: [
       {
         id: '7',
@@ -113,8 +113,9 @@ export const mockMovies: Movie[] = [
     duration: '2h 49m',
     ageRating: 'PG-13',
     description: 'When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans.',
-    posterUrl: 'https://placehold.co/280x420/1a1a1a/666666?text=Interstellar',
-    backdropUrl: 'https://placehold.co/1920x1080/1a1a1a/666666?text=Interstellar+Backdrop',
+    posterUrl: 'https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg',
+    backdropUrl: 'https://image.tmdb.org/t/p/original/xu9zaAevzQ5nnrsXN6JcahLnG4i.jpg',
+    manifestUrl: 'https://pub-aa3b88716caa49448c30e2ab3bd8f98b.r2.dev/interstellar/master.m3u8',
     cast: [
       {
         id: '13',
@@ -164,8 +165,8 @@ export const mockMovies: Movie[] = [
     duration: '2h 16m',
     ageRating: 'R',
     description: 'When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking truth--the life he knows is the elaborate deception of an evil cyber-intelligence.',
-    posterUrl: 'https://placehold.co/280x420/1a1a1a/666666?text=Matrix',
-    backdropUrl: 'https://placehold.co/1920x1080/1a1a1a/666666?text=Matrix+Backdrop',
+    posterUrl: 'https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg',
+    backdropUrl: 'https://image.tmdb.org/t/p/original/icmmSD4vTTDKOq2vvdulafOGw93.jpg',
     cast: [
       {
         id: '19',
@@ -215,8 +216,8 @@ export const mockMovies: Movie[] = [
     duration: '2h 34m',
     ageRating: 'R',
     description: 'The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.',
-    posterUrl: 'https://placehold.co/280x420/1a1a1a/666666?text=Pulp+Fiction',
-    backdropUrl: 'https://placehold.co/1920x1080/1a1a1a/666666?text=Pulp+Fiction+Backdrop',
+    posterUrl: 'https://image.tmdb.org/t/p/w500/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg',
+    backdropUrl: 'https://image.tmdb.org/t/p/original/suaEOtk1N1sgg2MTM7oZd2cfVp3.jpg',
     cast: [
       {
         id: '25',
@@ -266,8 +267,8 @@ export const mockMovies: Movie[] = [
     duration: '2h 22m',
     ageRating: 'R',
     description: 'Over the course of several years, two convicts form a friendship, seeking consolation and, eventually, redemption through basic compassion.',
-    posterUrl: 'https://placehold.co/280x420/1a1a1a/666666?text=Shawshank',
-    backdropUrl: 'https://placehold.co/1920x1080/1a1a1a/666666?text=Shawshank+Backdrop',
+    posterUrl: 'https://image.tmdb.org/t/p/w500/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg',
+    backdropUrl: 'https://image.tmdb.org/t/p/original/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg',
     cast: [
       {
         id: '31',
@@ -317,8 +318,8 @@ export const mockMovies: Movie[] = [
     duration: '2h 19m',
     ageRating: 'R',
     description: 'An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.',
-    posterUrl: 'https://placehold.co/280x420/1a1a1a/666666?text=Fight+Club',
-    backdropUrl: 'https://placehold.co/1920x1080/1a1a1a/666666?text=Fight+Club+Backdrop',
+    posterUrl: 'https://image.tmdb.org/t/p/w500/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg',
+    backdropUrl: 'https://image.tmdb.org/t/p/original/hZkgoQYus5vegHoetLkCJzb17zJ.jpg',
     cast: [
       {
         id: '37',
@@ -368,8 +369,8 @@ export const mockMovies: Movie[] = [
     duration: '2h 22m',
     ageRating: 'PG-13',
     description: 'The history of the United States from the 1950s to the 1970s unfolds from the perspective of an Alabama man with an IQ of 75, who yearns to be reunited with his childhood sweetheart.',
-    posterUrl: 'https://placehold.co/280x420/1a1a1a/666666?text=Forrest+Gump',
-    backdropUrl: 'https://placehold.co/1920x1080/1a1a1a/666666?text=Forrest+Gump+Backdrop',
+    posterUrl: 'https://image.tmdb.org/t/p/w500/arw2vcBveWOVZr6pxd9XTd1TdQa.jpg',
+    backdropUrl: 'https://image.tmdb.org/t/p/original/7c9UVPPiTPltouxRVY6N9uUaHDa.jpg',
     cast: [
       {
         id: '43',
@@ -419,8 +420,8 @@ export const mockMovies: Movie[] = [
     duration: '2h 25m',
     ageRating: 'R',
     description: 'The story of Henry Hill and his life in the mafia, covering his relationship with his wife Karen and his mob partners Jimmy Conway and Tommy DeVito.',
-    posterUrl: 'https://placehold.co/280x420/1a1a1a/666666?text=Goodfellas',
-    backdropUrl: 'https://placehold.co/1920x1080/1a1a1a/666666?text=Goodfellas+Backdrop',
+    posterUrl: 'https://image.tmdb.org/t/p/w500/aKuFiU82s5ISJpGZp7YkIr3kCUd.jpg',
+    backdropUrl: 'https://image.tmdb.org/t/p/original/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg',
     cast: [
       {
         id: '49',
@@ -470,8 +471,8 @@ export const mockMovies: Movie[] = [
     duration: '1h 58m',
     ageRating: 'R',
     description: 'A young FBI cadet must receive the help of an incarcerated and manipulative cannibal killer to help catch another serial killer.',
-    posterUrl: 'https://placehold.co/280x420/1a1a1a/666666?text=Silence+Lambs',
-    backdropUrl: 'https://placehold.co/1920x1080/1a1a1a/666666?text=Silence+Lambs+Backdrop',
+    posterUrl: 'https://image.tmdb.org/t/p/w500/uS9m8OBk1A8eM9I042bx8XXpqAq.jpg',
+    backdropUrl: 'https://image.tmdb.org/t/p/original/7NbAlABCfiTh5oQzVkimeqZ3RsX.jpg',
     cast: [
       {
         id: '55',
@@ -521,8 +522,8 @@ export const mockMovies: Movie[] = [
     duration: '2h 7m',
     ageRating: 'R',
     description: 'Two detectives, a rookie and a veteran, hunt a serial killer who uses the seven deadly sins as his motives.',
-    posterUrl: 'https://placehold.co/280x420/1a1a1a/666666?text=Se7en',
-    backdropUrl: 'https://placehold.co/1920x1080/1a1a1a/666666?text=Se7en+Backdrop',
+    posterUrl: 'https://image.tmdb.org/t/p/w500/6yoghtyTpznpBik8EngEmJskVUO.jpg',
+    backdropUrl: 'https://image.tmdb.org/t/p/original/l6hQWH9eDksNJNiXWYRkWqikOdu.jpg',
     cast: [
       {
         id: '61',
@@ -572,8 +573,8 @@ export const mockMovies: Movie[] = [
     duration: '2h 55m',
     ageRating: 'R',
     description: 'The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.',
-    posterUrl: 'https://placehold.co/280x420/1a1a1a/666666?text=Godfather',
-    backdropUrl: 'https://placehold.co/1920x1080/1a1a1a/666666?text=Godfather+Backdrop',
+    posterUrl: 'https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg',
+    backdropUrl: 'https://image.tmdb.org/t/p/original/tmU7GeKVybMWFButWEGl2M4GeiP.jpg',
     cast: [
       {
         id: '67',
@@ -623,8 +624,8 @@ export const mockMovies: Movie[] = [
     duration: '2h 10m',
     ageRating: 'PG-13',
     description: 'After a tragic accident, two stage magicians in 1890s London engage in a battle to create the ultimate illusion while sacrificing everything they have to outwit each other.',
-    posterUrl: 'https://placehold.co/280x420/1a1a1a/666666?text=Prestige',
-    backdropUrl: 'https://placehold.co/1920x1080/1a1a1a/666666?text=Prestige+Backdrop',
+    posterUrl: 'https://image.tmdb.org/t/p/w500/tRNlZbgNCNOpLpbPEz5L8G8A0JN.jpg',
+    backdropUrl: 'https://image.tmdb.org/t/p/original/7wJyCNnW5zYWoVTA3219P6TdFqA.jpg',
     cast: [
       {
         id: '73',
@@ -674,8 +675,8 @@ export const mockMovies: Movie[] = [
     duration: '2h 35m',
     ageRating: 'R',
     description: 'A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.',
-    posterUrl: 'https://placehold.co/280x420/1a1a1a/666666?text=Gladiator',
-    backdropUrl: 'https://placehold.co/1920x1080/1a1a1a/666666?text=Gladiator+Backdrop',
+    posterUrl: 'https://image.tmdb.org/t/p/w500/ty8TGRuvJLPUmAR1H1nRIsgwvim.jpg',
+    backdropUrl: 'https://image.tmdb.org/t/p/original/xTjd83zPHMwFkGX4kxRcCzJqnGK.jpg',
     cast: [
       {
         id: '79',
@@ -725,8 +726,8 @@ export const mockMovies: Movie[] = [
     duration: '2h 31m',
     ageRating: 'R',
     description: 'An undercover cop and a mole in the police attempt to identify each other while infiltrating an Irish gang in South Boston.',
-    posterUrl: 'https://placehold.co/280x420/1a1a1a/666666?text=Departed',
-    backdropUrl: 'https://placehold.co/1920x1080/1a1a1a/666666?text=Departed+Backdrop',
+    posterUrl: 'https://image.tmdb.org/t/p/w500/nT97ifVT2J1yMQmeq20Qblg61T.jpg',
+    backdropUrl: 'https://image.tmdb.org/t/p/original/8Od5zV93YjdG7P1MKn1vQi4Ypqx.jpg',
     cast: [
       {
         id: '85',
@@ -776,8 +777,8 @@ export const mockMovies: Movie[] = [
     duration: '1h 46m',
     ageRating: 'R',
     description: 'A promising young drummer enrolls at a cut-throat music conservatory where his dreams of greatness are mentored by an instructor who will stop at nothing to realize a students potential.',
-    posterUrl: 'https://placehold.co/280x420/1a1a1a/666666?text=Whiplash',
-    backdropUrl: 'https://placehold.co/1920x1080/1a1a1a/666666?text=Whiplash+Backdrop',
+    posterUrl: 'https://image.tmdb.org/t/p/w500/7fn624j5lj3xTme2SgiLCeuedmO.jpg',
+    backdropUrl: 'https://image.tmdb.org/t/p/original/6bbZ6XyvgfjhQwbplnUh1LSj1ky.jpg',
     cast: [
       {
         id: '91',
@@ -827,8 +828,8 @@ export const mockMovies: Movie[] = [
     duration: '3h 9m',
     ageRating: 'R',
     description: 'A tale set on death row in a Southern jail, where gentle giant John Coffey possesses the mysterious power to heal peoples ailments.',
-    posterUrl: 'https://placehold.co/280x420/1a1a1a/666666?text=Green+Mile',
-    backdropUrl: 'https://placehold.co/1920x1080/1a1a1a/666666?text=Green+Mile+Backdrop',
+    posterUrl: 'https://image.tmdb.org/t/p/w500/8VG8fDNiy50H4FedGwdSVUPoaJe.jpg',
+    backdropUrl: 'https://image.tmdb.org/t/p/original/l6hQWH9eDksNJNiXWYRkWqikOdu.jpg',
     cast: [
       {
         id: '97',
@@ -878,8 +879,8 @@ export const mockMovies: Movie[] = [
     duration: '2h 49m',
     ageRating: 'R',
     description: 'Following the Normandy Landings, a group of U.S. soldiers go behind enemy lines to retrieve a paratrooper whose brothers have been killed in action.',
-    posterUrl: 'https://placehold.co/280x420/1a1a1a/666666?text=Private+Ryan',
-    backdropUrl: 'https://placehold.co/1920x1080/1a1a1a/666666?text=Private+Ryan+Backdrop',
+    posterUrl: 'https://image.tmdb.org/t/p/w500/uqx37cS8cpHg8U35f9U5IBlrCV3.jpg',
+    backdropUrl: 'https://image.tmdb.org/t/p/original/hMV0Y41JfhJgGWdRJcg9fLKOIvs.jpg',
     cast: [
       {
         id: '103',
@@ -931,8 +932,8 @@ export const mockTVShows: TVShow[] = [
     rating: 9.5,
     ageRating: 'TV-MA',
     description: 'A chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine with a former student to secure his familys future.',
-    posterUrl: 'https://placehold.co/280x420/1a1a1a/666666?text=Breaking+Bad',
-    backdropUrl: 'https://placehold.co/1920x1080/1a1a1a/666666?text=Breaking+Bad+Backdrop',
+    posterUrl: 'https://image.tmdb.org/t/p/w500/ggFHVNu6YYI5L9pCfOacjizRGt.jpg',
+    backdropUrl: 'https://image.tmdb.org/t/p/original/tsRy63Mu5cu8etL1X7ZLyf7UP1M.jpg',
     cast: [
       {
         id: '1',
@@ -1025,8 +1026,8 @@ export const mockTVShows: TVShow[] = [
     rating: 9.2,
     ageRating: 'TV-MA',
     description: 'Nine noble families fight for control over the lands of Westeros, while an ancient enemy returns after being dormant for millennia.',
-    posterUrl: 'https://placehold.co/280x420/1a1a1a/666666?text=Game+Thrones',
-    backdropUrl: 'https://placehold.co/1920x1080/1a1a1a/666666?text=Game+Thrones+Backdrop',
+    posterUrl: 'https://image.tmdb.org/t/p/w500/1XS1oqL89opfnbLl8WnZY1O1uJx.jpg',
+    backdropUrl: 'https://image.tmdb.org/t/p/original/2OMB0ynKlyIenMJWI2Dy9IWT4c.jpg',
     cast: [
       {
         id: '7',
@@ -1117,8 +1118,8 @@ export const mockTVShows: TVShow[] = [
     rating: 8.7,
     ageRating: 'TV-14',
     description: 'When a young boy disappears, his mother, a police chief and his friends must confront terrifying supernatural forces in order to get him back.',
-    posterUrl: 'https://placehold.co/280x420/1a1a1a/666666?text=Stranger+Things',
-    backdropUrl: 'https://placehold.co/1920x1080/1a1a1a/666666?text=Stranger+Things+Backdrop',
+    posterUrl: 'https://image.tmdb.org/t/p/w500/x2LSRK2Cm7MZhjluni1msVJ3wDF.jpg',
+    backdropUrl: 'https://image.tmdb.org/t/p/original/56v2KjBlU4XaOv9rVYEQypROD7P.jpg',
     cast: [
       {
         id: '13',
@@ -1188,21 +1189,21 @@ export const mockCollections: Collection[] = [
     id: '1',
     name: 'Mind-Bending Thrillers',
     description: 'Movies that will make you question reality',
-    thumbnailUrl: 'https://placehold.co/400x225/1a1a1a/666666?text=Mind-Bending',
+    thumbnailUrl: 'https://image.tmdb.org/t/p/w780/s3TBrRGB1iav7gFOCNx3H31MoES.jpg',
     movies: ['1', '3', '4', '13', '7', '11', '14', '2', '15', '16']
   },
   {
     id: '2',
     name: 'Crime Masterpieces',
     description: 'The best crime films ever made',
-    thumbnailUrl: 'https://placehold.co/400x225/1a1a1a/666666?text=Crime',
+    thumbnailUrl: 'https://image.tmdb.org/t/p/w780/tmU7GeKVybMWFButWEGl2M4GeiP.jpg',
     movies: ['2', '5', '9', '10', '11', '12', '15', '17', '6', '8']
   },
   {
     id: '3',
     name: 'Christopher Nolan Collection',
     description: 'All the masterworks from Nolan',
-    thumbnailUrl: 'https://placehold.co/400x225/1a1a1a/666666?text=Nolan',
+    thumbnailUrl: 'https://image.tmdb.org/t/p/w780/hkBaDkMWbLaf8B1lsWsKX7Ew3Xq.jpg',
     movies: ['1', '2', '3', '13']
   }
 ]

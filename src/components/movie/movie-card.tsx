@@ -4,9 +4,6 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Star, Plus, Check, Play } from 'lucide-react'
-import { Card, CardContent } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
 import { useAuth } from '@/lib/auth-context'
 import { SignInModal } from '@/components/auth/sign-in-modal'
 import { toast } from 'sonner'
@@ -41,78 +38,74 @@ export function MovieCard({ movie }: MovieCardProps) {
 
   return (
     <>
-      <Link href={`/movie/${movie.id}`} className="block">
-        <Card className="group overflow-hidden bg-card border-none hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300">
-          <div className="relative aspect-[2/3] overflow-hidden bg-muted">
+      <div className="relative min-w-[280px] flex-shrink-0 rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_8px_24px_rgba(0,0,0,0.5)] hover:z-10 cursor-pointer group">
+        <Link href={`/movie/${movie.id}`} className="block">
+          <div className="relative w-[280px] h-[420px] overflow-hidden bg-secondary">
             <Image
               src={movie.posterUrl}
               alt={movie.title}
               fill
-              sizes="(max-width: 768px) 160px, (max-width: 1024px) 220px, 280px"
-              className="object-cover group-hover:scale-110 transition-transform duration-500"
+              sizes="280px"
+              className="object-cover transition-transform duration-500 group-hover:scale-110"
               unoptimized
             />
 
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-              <div className="space-y-2">
-                <h3 className="font-semibold text-sm md:text-base line-clamp-2">{movie.title}</h3>
-                <div className="flex items-center gap-2 text-xs">
-                  <div className="flex items-center gap-1">
-                    <Star className="h-3 w-3 fill-gold text-gold" />
-                    <span className="font-semibold text-gold">{movie.rating}</span>
-                  </div>
-                  <span className="text-muted-foreground">{movie.year}</span>
+            {/* Overlay */}
+            <div className="absolute bottom-0 left-0 right-0 p-6 opacity-0 translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+              style={{
+                background: 'linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.8) 50%, transparent 100%)'
+              }}
+            >
+              <h3 className="text-lg font-semibold mb-2 leading-tight">{movie.title}</h3>
+
+              <div className="flex items-center gap-3 mb-4 text-sm">
+                <span className="text-muted-foreground">{movie.year}</span>
+                <div className="flex items-center gap-1">
+                  <Star className="h-4 w-4 fill-gold text-gold" />
+                  <span className="font-semibold text-gold">{movie.rating}</span>
                 </div>
-                <div className="flex gap-2">
-                  <Button
-                    size="sm"
-                    variant="secondary"
-                    className="flex-1"
-                    onClick={(e) => {
-                      e.preventDefault()
-                      e.stopPropagation()
-                      window.location.href = `/watch/${movie.id}`
-                    }}
-                  >
-                    <Play className="mr-1 h-3 w-3" />
-                    Play
-                  </Button>
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    onClick={handleAddToList}
-                  >
-                    {inWatchlist ? (
-                      <Check className="h-3 w-3" />
-                    ) : (
-                      <Plus className="h-3 w-3" />
-                    )}
-                    <span className="sr-only">{inWatchlist ? 'Remove from list' : 'Add to list'}</span>
-                  </Button>
-                </div>
+              </div>
+
+              <div className="flex gap-2">
+                <button
+                  onClick={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    window.location.href = `/watch/${movie.id}`
+                  }}
+                  className="w-9 h-9 bg-white/15 rounded-full flex items-center justify-center transition-all hover:bg-netflix-red hover:scale-[1.15] active:scale-95 backdrop-blur-[10px]"
+                  aria-label="Play"
+                >
+                  <Play className="h-5 w-5 fill-current" />
+                </button>
+                <button
+                  onClick={handleAddToList}
+                  className="w-9 h-9 bg-white/15 rounded-full flex items-center justify-center transition-all hover:bg-netflix-red hover:scale-[1.15] active:scale-95 backdrop-blur-[10px]"
+                  aria-label={inWatchlist ? 'Remove from list' : 'Add to list'}
+                >
+                  {inWatchlist ? (
+                    <Check className="h-5 w-5" />
+                  ) : (
+                    <Plus className="h-5 w-5" />
+                  )}
+                </button>
+                <Link
+                  href={`/movie/${movie.id}`}
+                  onClick={(e) => e.stopPropagation()}
+                  className="w-9 h-9 bg-white/15 rounded-full flex items-center justify-center transition-all hover:bg-netflix-red hover:scale-[1.15] active:scale-95 backdrop-blur-[10px]"
+                  aria-label="More info"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                  </svg>
+                </Link>
               </div>
             </div>
           </div>
-
-          <CardContent className="p-3">
-            <h3 className="line-clamp-1 text-sm md:text-base font-medium mb-1">{movie.title}</h3>
-            <div className="flex items-center justify-between text-xs md:text-sm text-muted-foreground mb-2">
-              <span>{movie.year}</span>
-              <div className="flex items-center gap-1">
-                <Star className="h-3 w-3 fill-gold text-gold" />
-                <span className="font-semibold text-gold">{movie.rating}</span>
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-1">
-              {movie.genre.slice(0, 2).map((genre) => (
-                <Badge key={genre} variant="secondary" className="text-xs">
-                  {genre}
-                </Badge>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-      </Link>
+        </Link>
+      </div>
 
       <SignInModal open={signInOpen} onOpenChange={setSignInOpen} />
     </>

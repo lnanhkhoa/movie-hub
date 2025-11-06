@@ -19,13 +19,13 @@ export default function HomePage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-background">
+      <main className="relative z-10 pb-[50px]">
         <HeroSection movie={featuredMovie} />
 
-        <div className="container mx-auto py-8 md:py-12 space-y-8 md:space-y-12">
+        <div className="space-y-0">
           <Carousel title="Trending Now" movies={trendingMovies} />
-          <Carousel title="Popular on Movie Hub" movies={popularMovies} />
-          <Carousel title="Action Movies" movies={actionMovies} />
+          <Carousel title="Popular Movies" movies={popularMovies} />
+          <Carousel title="Top Rated" movies={actionMovies} />
         </div>
       </main>
       <Footer />

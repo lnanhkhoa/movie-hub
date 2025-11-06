@@ -31,46 +31,41 @@ export function Carousel({ title, movies }: CarouselProps) {
   if (movies.length === 0) return null
 
   return (
-    <div className="space-y-4">
-      <h2 className="text-xl md:text-2xl font-semibold px-4 lg:px-0">{title}</h2>
-
-      <div className="relative group">
-        <Button
-          variant="ghost"
-          size="icon"
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 h-full w-12 rounded-none bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/70"
-          onClick={() => scroll('left')}
-        >
-          <ChevronLeft className="h-8 w-8" />
-          <span className="sr-only">Scroll left</span>
-        </Button>
-
-        <div
-          ref={scrollRef}
-          className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth px-4 lg:px-0"
-          style={{
-            scrollbarWidth: 'none',
-            msOverflowStyle: 'none',
-            WebkitOverflowScrolling: 'touch'
-          }}
-        >
-          {movies.map((movie) => (
-            <div key={movie.id} className="flex-none w-[160px] md:w-[220px] lg:w-[280px]">
-              <MovieCard movie={movie} />
-            </div>
-          ))}
+    <section className="mb-[50px]">
+      <div className="flex justify-between items-center px-[50px] mb-6">
+        <h2 className="text-[clamp(20px,2.5vw,28px)] font-semibold">{title}</h2>
+        <div className="flex gap-2">
+          <button
+            onClick={() => scroll('left')}
+            className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center transition-all hover:bg-white/20 hover:scale-110 active:scale-95 backdrop-blur-[10px]"
+            aria-label="Previous"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </button>
+          <button
+            onClick={() => scroll('right')}
+            className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center transition-all hover:bg-white/20 hover:scale-110 active:scale-95 backdrop-blur-[10px]"
+            aria-label="Next"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
         </div>
-
-        <Button
-          variant="ghost"
-          size="icon"
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 h-full w-12 rounded-none bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/70"
-          onClick={() => scroll('right')}
-        >
-          <ChevronRight className="h-8 w-8" />
-          <span className="sr-only">Scroll right</span>
-        </Button>
       </div>
-    </div>
+
+      <div
+        ref={scrollRef}
+        className="flex gap-4 overflow-x-auto px-[50px] scroll-smooth"
+        style={{
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none'
+        }}
+      >
+        {movies.map((movie) => (
+          <div key={movie.id} className="flex-none w-[280px]">
+            <MovieCard movie={movie} />
+          </div>
+        ))}
+      </div>
+    </section>
   )
 }

@@ -10,6 +10,7 @@ export interface Movie {
   posterUrl: string
   backdropUrl: string
   trailerUrl?: string
+  manifestUrl?: string
   cast: CastMember[]
   director: string
 }

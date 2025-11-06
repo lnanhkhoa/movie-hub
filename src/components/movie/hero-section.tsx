@@ -1,9 +1,10 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { Play, Plus, Star } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
-import type { Movie } from '@/lib/types'
+import Image from "next/image"
+import Link from "next/link"
+import { Play, Plus, Star } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import type { Movie } from "@/lib/types"
+import { IS_HIDE_AUTH } from "@/config/env"
 
 interface HeroSectionProps {
   movie: Movie
@@ -11,68 +12,83 @@ interface HeroSectionProps {
 
 export function HeroSection({ movie }: HeroSectionProps) {
   return (
-    <div className="relative h-[70vh] md:h-[80vh] lg:h-[90vh] w-full overflow-hidden">
-      <Image
-        src={movie.backdropUrl}
-        alt={movie.title}
-        fill
-        priority
-        className="object-cover"
-        sizes="100vw"
-        unoptimized
+    <section className="relative h-[90vh] min-h-[600px] flex items-center overflow-hidden mt-[70px]">
+      {/* Background */}
+      <div className="absolute inset-0 z-[1]">
+        <Image
+          src={movie.backdropUrl}
+          alt={movie.title}
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+          unoptimized
+        />
+      </div>
+
+      {/* Gradient Overlay */}
+      <div className="absolute bottom-0 left-0 right-0 h-[60%] z-[2]"
+        style={{
+          background: 'linear-gradient(to top, rgb(20, 20, 20) 0%, rgba(20, 20, 20, 0.8) 50%, transparent 100%)'
+        }}
       />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent" />
+      {/* Content */}
+      <div className="relative z-[3] w-full max-w-[1920px] mx-auto px-[50px]">
+        <div className="max-w-[600px] space-y-4 md:space-y-6">
+          <h1 className="text-[clamp(48px,6vw,72px)] font-bold leading-tight tracking-[-1px] text-shadow">
+            {movie.title}
+          </h1>
 
-      <div className="absolute inset-0 flex items-center">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-2xl space-y-4 md:space-y-6">
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold animate-in slide-in-from-bottom-4 duration-1000">
-              {movie.title}
-            </h1>
-
-            <div className="flex flex-wrap items-center gap-3 md:gap-4 text-sm md:text-lg">
-              <div className="flex items-center gap-2">
-                <Star className="h-5 w-5 md:h-6 md:w-6 fill-gold text-gold" />
-                <span className="font-semibold text-gold">{movie.rating}/10</span>
-              </div>
-              <span className="text-muted-foreground">{movie.year}</span>
-              <span className="text-muted-foreground">{movie.duration}</span>
-              <Badge variant="outline" className="text-xs md:text-sm">
-                {movie.ageRating}
-              </Badge>
-            </div>
-
-            <div className="flex flex-wrap gap-2">
-              {movie.genre.map((genre) => (
-                <Badge key={genre} variant="secondary">
-                  {genre}
-                </Badge>
+          <div className="flex flex-wrap items-center gap-4">
+            <div className="flex items-center gap-1">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="h-5 w-5 fill-gold text-gold drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]" />
               ))}
+              <span className="ml-2 font-semibold text-gold text-lg">{movie.rating}</span>
             </div>
+            <span className="text-muted-foreground text-base font-medium pl-4 border-l-2 border-muted-foreground">
+              {movie.year}
+            </span>
+            <span className="text-muted-foreground text-base font-medium pl-4 border-l-2 border-muted-foreground">
+              {movie.duration}
+            </span>
+            <span className="text-muted-foreground text-base font-medium pl-4 border-l-2 border-muted-foreground">
+              {movie.ageRating}
+            </span>
+          </div>
 
-            <p className="text-sm md:text-lg lg:text-xl text-muted-foreground line-clamp-3 max-w-xl">
-              {movie.description}
-            </p>
+          <p className="text-lg leading-relaxed text-foreground max-w-[600px] font-[family-name:var(--font-roboto)] text-shadow-sm">
+            {movie.description}
+          </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2">
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                <Link href={`/watch/${movie.id}`}>
-                  <Play className="mr-2 h-5 w-5 fill-current" />
-                  Play Now
+          <div className="flex flex-wrap gap-4 pt-2">
+            <Button
+              asChild
+              size="lg"
+              className="bg-netflix-red hover:bg-[#c40812] hover:scale-105 transition-all text-white shadow-[0_8px_24px_rgba(229,9,20,0.4)] px-8 py-[14px] text-base font-semibold tracking-[0.3px] rounded-md"
+            >
+              <Link href={`/watch/${movie.id}`} className="flex items-center gap-3">
+                <Play className="h-6 w-6 fill-current" />
+                Play Now
+              </Link>
+            </Button>
+            {!IS_HIDE_AUTH && (
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="backdrop-blur-[10px] bg-white/20 hover:bg-white/30 border-2 border-white/50 hover:border-white hover:scale-105 transition-all px-8 py-[14px] text-base font-semibold tracking-[0.3px] rounded-md"
+              >
+                <Link href={`/movie/${movie.id}`} className="flex items-center gap-3">
+                  <Plus className="h-6 w-6" />
+                  Add to List
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link href={`/movie/${movie.id}`}>
-                  <Plus className="mr-2 h-5 w-5" />
-                  More Info
-                </Link>
-              </Button>
-            </div>
+            )}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }

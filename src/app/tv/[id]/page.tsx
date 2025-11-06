@@ -55,7 +55,7 @@ export default async function TVShowDetailPage({ params }: TVShowDetailPageProps
             sizes="100vw"
             unoptimized
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-background to-transparent" />
         </div>
 
         <div className="container mx-auto px-4 lg:px-8 -mt-32 md:-mt-40 relative z-10">

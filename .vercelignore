@@ -1,0 +1,14 @@
+.git
+.gitignore
+README.md
+.env.local
+.env.*.local
+node_modules
+.next
+.turbo
+coverage
+.DS_Store
+*.log
+docs
+plans
+.codeiumignore

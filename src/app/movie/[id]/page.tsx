@@ -1,16 +1,17 @@
-import { notFound } from 'next/navigation'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Play, Plus, Star } from 'lucide-react'
-import { Navbar } from '@/components/layout/navbar'
-import { Footer } from '@/components/layout/footer'
-import { Button } from '@/components/ui/button'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { Badge } from '@/components/ui/badge'
-import { Separator } from '@/components/ui/separator'
-import { Carousel } from '@/components/movie/carousel'
-import { mockMovies } from '@/lib/mock-data'
-import type { Metadata } from 'next'
+import { notFound } from "next/navigation"
+import Image from "next/image"
+import Link from "next/link"
+import { Play, Plus, Star } from "lucide-react"
+import { Navbar } from "@/components/layout/navbar"
+import { Footer } from "@/components/layout/footer"
+import { Button } from "@/components/ui/button"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Badge } from "@/components/ui/badge"
+import { Separator } from "@/components/ui/separator"
+import { Carousel } from "@/components/movie/carousel"
+import { mockMovies } from "@/lib/mock-data"
+import type { Metadata } from "next"
+import { IS_HIDE_AUTH } from "@/config/env"
 
 interface MovieDetailPageProps {
   params: Promise<{ id: string }>
@@ -18,12 +19,9 @@ interface MovieDetailPageProps {
 
 export async function generateMetadata({ params }: MovieDetailPageProps): Promise<Metadata> {
   const { id } = await params
-  const movie = mockMovies.find(m => m.id === id)
+  const movie = mockMovies.find((m) => m.id === id)
 
-  if (!movie) {
-    return { title: 'Movie Not Found' }
-  }
-
+  if (!movie) return { title: "Movie Not Found" }
   return {
     title: `${movie.title} (${movie.year}) - Movie Hub`,
     description: movie.description,
@@ -31,23 +29,20 @@ export async function generateMetadata({ params }: MovieDetailPageProps): Promis
 }
 
 export async function generateStaticParams() {
-  return mockMovies.map(movie => ({
-    id: movie.id,
-  }))
+  return mockMovies.map((movie) => ({ id: movie.id }))
 }
 
 export default async function MovieDetailPage({ params }: MovieDetailPageProps) {
   const { id } = await params
-  const movie = mockMovies.find(m => m.id === id)
+  const movie = mockMovies.find((m) => m.id === id)
 
   if (!movie) {
     notFound()
   }
 
-  const similarMovies = mockMovies.filter(m =>
-    m.id !== movie.id &&
-    m.genre.some(g => movie.genre.includes(g))
-  ).slice(0, 10)
+  const similarMovies = mockMovies
+    .filter((m) => m.id !== movie.id && m.genre.some((g) => movie.genre.includes(g)))
+    .slice(0, 10)
 
   return (
     <>
@@ -63,7 +58,7 @@ export default async function MovieDetailPage({ params }: MovieDetailPageProps) 
             sizes="100vw"
             unoptimized
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-background to-transparent" />
         </div>
 
         <div className="container mx-auto px-4 lg:px-8 -mt-32 md:-mt-40 relative z-10">
@@ -94,7 +89,9 @@ export default async function MovieDetailPage({ params }: MovieDetailPageProps) 
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 md:h-6 md:w-6 fill-gold text-gold" />
-                  <span className="text-xl md:text-2xl font-semibold text-gold">{movie.rating}/10</span>
+                  <span className="text-xl md:text-2xl font-semibold text-gold">
+                    {movie.rating}/10
+                  </span>
                 </div>
               </div>
 
@@ -113,10 +110,12 @@ export default async function MovieDetailPage({ params }: MovieDetailPageProps) 
                     Play Now
                   </Link>
                 </Button>
-                <Button size="lg" variant="outline">
-                  <Plus className="mr-2 h-5 w-5" />
-                  Add to List
-                </Button>
+                {!IS_HIDE_AUTH && (
+                  <Button size="lg" variant="outline">
+                    <Plus className="mr-2 h-5 w-5" />
+                    Add to List
+                  </Button>
+                )}
               </div>
 
               <Separator />
@@ -129,9 +128,7 @@ export default async function MovieDetailPage({ params }: MovieDetailPageProps) 
                 <TabsContent value="overview" className="space-y-4 pt-4">
                   <div>
                     <h3 className="text-lg font-semibold mb-2">Synopsis</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {movie.description}
-                    </p>
+                    <p className="text-muted-foreground leading-relaxed">{movie.description}</p>
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-2">Director</h3>

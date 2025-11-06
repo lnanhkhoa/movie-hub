@@ -1,12 +1,12 @@
 "use client"
 
-import { useState } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { usePathname } from 'next/navigation'
-import { Search, Menu, X, Play } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
+import { useState, useEffect } from "react"
+import Link from "next/link"
+import Image from "next/image"
+import { usePathname } from "next/navigation"
+import { Search, Menu, X, Bell } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,17 +14,19 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
-import { SignInModal } from '@/components/auth/sign-in-modal'
-import { useAuth } from '@/lib/auth-context'
-import { toast } from 'sonner'
+} from "@/components/ui/dropdown-menu"
+import { SignInModal } from "@/components/auth/sign-in-modal"
+import { useAuth } from "@/lib/auth-context"
+import { toast } from "sonner"
+import { IS_HIDE_AUTH } from "@/config/env"
+import { cn } from "@/lib/utils"
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/genre/action', label: 'Movies' },
-  { href: '/tv/1', label: 'TV Shows' },
-  { href: '/collections', label: 'Collections' },
-  { href: '/my-list', label: 'My List' },
+  { href: "/", label: "Home" },
+  { href: "/genre/action", label: "Movies" },
+  { href: "/tv/1", label: "TV Shows" },
+  { href: "/collections", label: "New & Popular" },
+  // { href: "/my-list", label: "My List" },
 ]
 
 export function Navbar() {
@@ -33,6 +35,16 @@ export function Navbar() {
   const [signInOpen, setSignInOpen] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const handleSignOut = () => {
     signOut()
@@ -41,75 +53,72 @@ export function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="flex h-16 items-center justify-between">
-            <Link href="/" className="flex items-center gap-2">
-              <Play className="h-6 w-6 text-netflix-red fill-current" />
-              <span className="text-xl md:text-2xl font-bold text-netflix-red">Movie Hub</span>
-            </Link>
+      <nav className={cn(
+        "fixed top-0 left-0 right-0 h-[70px] z-[1000] transition-all duration-300",
+        scrolled
+          ? "bg-[rgba(20,20,20,0.98)] shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
+          : "bg-[rgba(20,20,20,0.95)] backdrop-blur-[10px]"
+      )}>
+        <div className="max-w-[1920px] mx-auto h-full px-[50px]">
+          <div className="flex h-full items-center justify-between">
+            <div className="flex items-center gap-10">
+              <Link href="/" className="flex items-center gap-3">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="40" height="40" rx="6" fill="#E50914"/>
+                  <path d="M10 10L20 20L10 30V10Z" fill="white"/>
+                  <path d="M20 10L30 20L20 30V10Z" fill="white" opacity="0.7"/>
+                </svg>
+                <span className="text-2xl font-bold text-netflix-red tracking-[-0.5px]">Movie Hub</span>
+              </Link>
 
-            <nav className="hidden md:flex items-center gap-6">
-              {navLinks.map((link) => {
-                const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href))
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className={`text-sm transition-colors hover:text-netflix-red ${
-                      isActive ? 'text-netflix-red font-semibold' : 'text-muted-foreground'
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                )
-              })}
-            </nav>
+              <ul className="hidden md:flex items-center gap-6">
+                {navLinks.map((link) => {
+                  const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href))
+                  return (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className={cn(
+                          "text-sm font-medium transition-colors hover:text-foreground relative",
+                          isActive ? "text-foreground" : "text-muted-foreground",
+                          isActive && "after:content-[''] after:absolute after:bottom-[-8px] after:left-0 after:right-0 after:h-[3px] after:bg-netflix-red after:rounded-[2px]"
+                        )}
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
 
-            <div className="flex items-center gap-4">
-              <div className="hidden md:block">
-                {searchOpen ? (
-                  <div className="flex items-center gap-2">
-                    <Input
-                      type="search"
-                      placeholder="Search movies..."
-                      className="w-64"
-                      autoFocus
-                      onKeyDown={(e) => {
-                        if (e.key === 'Enter') {
-                          const value = (e.target as HTMLInputElement).value
-                          if (value.trim()) {
-                            window.location.href = `/search?q=${encodeURIComponent(value)}`
-                          }
-                        }
-                      }}
-                    />
-                    <Button variant="ghost" size="icon" onClick={() => setSearchOpen(false)}>
-                      <X className="h-5 w-5" />
-                      <span className="sr-only">Close search</span>
-                    </Button>
-                  </div>
-                ) : (
-                  <Button variant="ghost" size="icon" onClick={() => setSearchOpen(true)}>
-                    <Search className="h-5 w-5" />
-                    <span className="sr-only">Search</span>
-                  </Button>
-                )}
-              </div>
+            <div className="flex items-center gap-6">
+              <Link href="/search" className="hidden md:flex p-2 rounded transition-colors hover:bg-white/10">
+                <Search className="h-6 w-6" />
+                <span className="sr-only">Search</span>
+              </Link>
+
+              <button className="hidden md:flex p-2 rounded transition-colors hover:bg-white/10">
+                <Bell className="h-6 w-6" />
+                <span className="sr-only">Notifications</span>
+              </button>
 
               {isAuthenticated && user ? (
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" className="relative h-10 w-10 rounded-full">
+                    <button className={cn("relative flex items-center gap-2 p-1 rounded transition-colors hover:bg-white/10 group", IS_HIDE_AUTH && "hidden")}>
                       <Image
                         src={user.avatarUrl}
                         alt={user.name}
-                        width={40}
-                        height={40}
-                        className="h-10 w-10 rounded-full"
+                        width={36}
+                        height={36}
+                        className="w-9 h-9 rounded"
                       />
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="transition-transform group-hover:rotate-180">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
                       <span className="sr-only">Open user menu</span>
-                    </Button>
+                    </button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end" className="w-56">
                     <DropdownMenuLabel>
@@ -126,13 +135,14 @@ export function Navbar() {
                       <Link href="/my-list">My List</Link>
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={handleSignOut}>
-                      Sign Out
-                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={handleSignOut}>Sign Out</DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
               ) : (
-                <Button onClick={() => setSignInOpen(true)} className="hidden md:inline-flex">
+                <Button
+                  onClick={() => setSignInOpen(true)}
+                  className={cn("hidden md:inline-flex", IS_HIDE_AUTH && "md:hidden")}
+                >
                   Sign In
                 </Button>
               )}
@@ -140,7 +150,7 @@ export function Navbar() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="md:hidden"
+                className={cn("md:hidden", IS_HIDE_AUTH && "hidden")}
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
                 {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -150,7 +160,7 @@ export function Navbar() {
           </div>
 
           {mobileMenuOpen && (
-            <nav className="md:hidden py-4 space-y-4 border-t border-border">
+            <div className="md:hidden py-4 space-y-4 border-t border-border/40">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -161,30 +171,21 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <div className="pt-4 border-t border-border">
-                <Input
-                  type="search"
-                  placeholder="Search movies..."
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter') {
-                      const value = (e.target as HTMLInputElement).value
-                      if (value.trim()) {
-                        window.location.href = `/search?q=${encodeURIComponent(value)}`
-                        setMobileMenuOpen(false)
-                      }
-                    }
+              {!isAuthenticated && !IS_HIDE_AUTH && (
+                <Button
+                  onClick={() => {
+                    setSignInOpen(true)
+                    setMobileMenuOpen(false)
                   }}
-                />
-              </div>
-              {!isAuthenticated && (
-                <Button onClick={() => { setSignInOpen(true); setMobileMenuOpen(false); }} className="w-full">
+                  className="w-full"
+                >
                   Sign In
                 </Button>
               )}
-            </nav>
+            </div>
           )}
         </div>
-      </header>
+      </nav>
 
       <SignInModal open={signInOpen} onOpenChange={setSignInOpen} />
     </>

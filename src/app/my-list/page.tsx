@@ -1,13 +1,15 @@
 "use client"
 
-import { Navbar } from '@/components/layout/navbar'
-import { Footer } from '@/components/layout/footer'
-import { MovieCard } from '@/components/movie/movie-card'
-import { Button } from '@/components/ui/button'
-import { useAuth } from '@/lib/auth-context'
-import { useState } from 'react'
-import { SignInModal } from '@/components/auth/sign-in-modal'
-import { mockMovies } from '@/lib/mock-data'
+import { Navbar } from "@/components/layout/navbar"
+import { Footer } from "@/components/layout/footer"
+import { MovieCard } from "@/components/movie/movie-card"
+import { Button } from "@/components/ui/button"
+import { useAuth } from "@/lib/auth-context"
+import { useState } from "react"
+import { SignInModal } from "@/components/auth/sign-in-modal"
+import { mockMovies } from "@/lib/mock-data"
+import { cn } from "@/lib/utils"
+import { IS_HIDE_AUTH } from "@/config/env"
 
 export default function MyListPage() {
   const { user, isAuthenticated } = useAuth()
@@ -24,7 +26,11 @@ export default function MyListPage() {
               <p className="text-muted-foreground">
                 Create a free account to save your favorite movies and TV shows
               </p>
-              <Button onClick={() => setSignInOpen(true)} size="lg">
+              <Button
+                onClick={() => setSignInOpen(true)}
+                size="lg"
+                className={cn("", IS_HIDE_AUTH && "hidden")}
+              >
                 Sign In
               </Button>
             </div>
@@ -36,9 +42,7 @@ export default function MyListPage() {
     )
   }
 
-  const watchlistMovies = mockMovies.filter(m =>
-    user?.watchlist.includes(m.id)
-  )
+  const watchlistMovies = mockMovies.filter((m) => user?.watchlist.includes(m.id))
 
   return (
     <>
@@ -48,7 +52,8 @@ export default function MyListPage() {
           <div className="mb-6 md:mb-8">
             <h1 className="text-3xl md:text-4xl font-bold mb-4">My List</h1>
             <p className="text-muted-foreground">
-              {watchlistMovies.length} {watchlistMovies.length === 1 ? 'movie' : 'movies'} in your list
+              {watchlistMovies.length} {watchlistMovies.length === 1 ? "movie" : "movies"} in your
+              list
             </p>
           </div>
 
